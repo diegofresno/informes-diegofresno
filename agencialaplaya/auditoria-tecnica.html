@@ -1,0 +1,1576 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Auditoría SEO · Mes 1 v3 · agencialaplaya.com</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:          #fafcff;
+  --bg-2:        #f0f4f8;
+  --bg-card:     #ffffff;
+  --border:      rgba(0,40,80,.08);
+  --border-soft: rgba(0,40,80,.05);
+  --cyan:        #0080a8;
+  --cyan-deep:   #005f7d;
+  --cyan-bg:     rgba(0,128,168,.07);
+  --teal:        #08876e;
+  --text:        #0f1c2e;
+  --text-soft:   #2a3d52;
+  --text-muted:  #4a5a6e;
+  --p0:          #B91C1C;
+  --p0-bg:       #FEF2F2;
+  --p1:          #B45309;
+  --p1-bg:       #FFFBEB;
+  --p2:          #15803D;
+  --p2-bg:       #F0FDF4;
+  --code-bg:     #0f1c2e;
+  --code-text:   #e2e8f0;
+  --code-comment:#64748b;
+  --code-string: #fcd34d;
+  --code-key:    #93c5fd;
+  --code-num:    #86efac;
+  --shadow-sm:   0 1px 4px rgba(0,40,80,.06);
+  --shadow-md:   0 4px 16px rgba(0,40,80,.08);
+  --transition:  .25s cubic-bezier(.4,0,.2,1);
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.65;
+  font-size: 15.5px;
+}
+.layout {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  max-width: 1380px;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+@media (max-width: 1000px) { .layout { grid-template-columns: 1fr; } }
+
+aside.toc {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  padding: 48px 28px 48px 48px;
+  border-right: 1px solid var(--border);
+  background: var(--bg);
+  overflow-y: auto;
+  font-size: 13px;
+}
+@media (max-width: 1000px) {
+  aside.toc { position: relative; height: auto; padding: 32px 24px; border-right: none; border-bottom: 1px solid var(--border); }
+}
+aside .brand { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 18px; color: var(--text); margin-bottom: 4px; }
+aside .brand-sub { font-size: 11px; color: var(--text-muted); letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 28px; font-weight: 500; }
+aside .toc-part { font-size: 9px; color: var(--cyan); letter-spacing: 0.2em; text-transform: uppercase; font-weight: 800; margin: 20px 0 8px 0; padding-top: 16px; border-top: 1px solid var(--border); }
+aside .toc-part:first-of-type { border-top: none; padding-top: 0; margin-top: 0; }
+aside ol { list-style: none; padding: 0; margin: 0; counter-reset: section; }
+aside ol > li { counter-increment: section; margin-bottom: 4px; }
+aside ol > li > a {
+  display: block; color: var(--text-soft); text-decoration: none;
+  font-size: 12.5px; font-weight: 600; line-height: 1.35;
+  padding: 5px 0 5px 26px; position: relative; transition: color 0.15s;
+}
+aside ol > li > a::before {
+  content: counter(section, decimal-leading-zero);
+  position: absolute; left: 0; top: 5px;
+  font-size: 10px; color: var(--cyan); font-weight: 700;
+}
+aside ol > li > a:hover { color: var(--cyan); }
+aside ol > li ul { list-style: none; padding: 0 0 0 26px; margin: 2px 0 6px 0; }
+aside ol > li ul li a {
+  display: block; color: var(--text-muted); text-decoration: none;
+  font-size: 11.5px; font-weight: 400; line-height: 1.35; padding: 2px 0;
+  transition: color 0.15s;
+}
+aside ol > li ul li a:hover { color: var(--cyan); }
+
+main.content { padding: 64px 64px 120px 64px; max-width: 920px; }
+@media (max-width: 1000px) { main.content { padding: 32px 24px 80px 24px; } }
+
+header.hero { border-bottom: 1px solid var(--border); padding-bottom: 40px; margin-bottom: 56px; }
+.eyebrow { font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--cyan); font-weight: 600; margin-bottom: 16px; }
+header.hero h1 { font-family: 'Poppins', sans-serif; font-size: 36px; line-height: 1.1; font-weight: 800; margin: 0 0 16px 0; letter-spacing: -0.02em; color: var(--text); }
+header.hero .lede { font-size: 16px; line-height: 1.55; color: var(--text-soft); max-width: 680px; margin-bottom: 28px; }
+header.hero .meta { display: grid; grid-template-columns: 1fr 1fr; gap: 20px 32px; padding: 24px; background: var(--bg-2); border-left: 3px solid var(--cyan); font-size: 13px; border-radius: 0 8px 8px 0; }
+header.hero .meta div .label { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); font-weight: 600; margin-bottom: 4px; }
+header.hero .meta div .val { color: var(--text); font-weight: 600; font-size: 14px; }
+
+.part-sep { margin: 72px 0 48px 0; padding: 24px 0 0 0; border-top: 2px solid var(--cyan); }
+.part-sep .part-label { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--cyan); font-weight: 800; margin-bottom: 8px; }
+.part-sep h2 { font-family: 'Poppins', sans-serif; font-size: 28px; font-weight: 700; color: var(--text); margin: 0 0 10px 0; }
+.part-sep p { color: var(--text-soft); font-size: 14.5px; margin: 0; }
+
+section { scroll-margin-top: 24px; margin-bottom: 60px; }
+section h2 { font-family: 'Poppins', sans-serif; font-size: 24px; font-weight: 700; color: var(--text); margin: 0 0 16px 0; display: flex; align-items: baseline; gap: 14px; padding-top: 16px; }
+section h2 .num { font-family: 'Inter', sans-serif; font-size: 11px; color: var(--cyan); letter-spacing: 0.18em; font-weight: 700; text-transform: uppercase; }
+section h3 { font-family: 'Poppins', sans-serif; font-size: 20px; font-weight: 600; color: var(--text); margin: 36px 0 12px 0; }
+section h4 { font-family: 'Inter', sans-serif; font-size: 12.5px; font-weight: 700; color: var(--text); margin: 18px 0 8px 0; text-transform: uppercase; letter-spacing: 0.08em; }
+section p { margin: 0 0 14px 0; color: var(--text-soft); }
+section strong { color: var(--text); font-weight: 600; }
+section em { color: var(--cyan); font-style: normal; font-weight: 500; }
+ul, ol.content-list { margin: 0 0 14px 22px; padding: 0; }
+ul li, ol.content-list li { color: var(--text-soft); margin-bottom: 5px; }
+ul li::marker, ol.content-list li::marker { color: var(--cyan); }
+
+.intro-block { background: var(--bg-2); border-left: 3px solid var(--cyan); padding: 20px 24px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+.intro-block p:last-child { margin-bottom: 0; }
+
+table { width: 100%; border-collapse: collapse; margin: 14px 0 24px 0; font-size: 13.5px; }
+table th { text-align: left; padding: 11px 12px 11px 0; font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700; color: var(--text-muted); border-bottom: 2px solid var(--text); }
+table td { padding: 13px 12px 13px 0; border-bottom: 1px solid var(--border); color: var(--text-soft); vertical-align: top; line-height: 1.5; }
+table td:first-child { color: var(--text); font-weight: 500; }
+.td-mono { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--cyan-deep); }
+.td-num { font-family: 'JetBrains Mono', monospace; font-size: 12.5px; font-weight: 600; color: var(--text); }
+.td-pos { font-family: 'JetBrains Mono', monospace; font-size: 12.5px; color: var(--text-muted); }
+.num-good { color: var(--p2) !important; font-weight: 700; }
+.num-warn { color: var(--p1) !important; font-weight: 700; }
+.num-bad  { color: var(--p0) !important; font-weight: 700; }
+
+.kpis { display: flex; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; background: var(--bg-card); margin: 20px 0 28px 0; box-shadow: var(--shadow-sm); }
+.kpi { flex: 1; padding: 18px 16px; border-right: 1px solid var(--border); text-align: center; }
+.kpi:last-child { border-right: none; }
+.kpi-value { font-family: 'JetBrains Mono', monospace; font-size: 22px; font-weight: 600; color: var(--text); line-height: 1; margin-bottom: 5px; }
+.kpi-label { font-size: 10px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; }
+
+.sev { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 0.05em; padding: 3px 8px; border-radius: 4px; font-family: 'Inter', sans-serif; vertical-align: 1px; margin-right: 6px; }
+.sev.p0 { background: var(--p0-bg); color: var(--p0); }
+.sev.p1 { background: var(--p1-bg); color: var(--p1); }
+.sev.p2 { background: var(--p2-bg); color: var(--p2); }
+.sev.crit { background: var(--p0); color: white; }
+.sev.quien-nos { background: rgba(0,128,168,.1); color: var(--cyan-deep); }
+.sev.quien-sem { background: var(--p1-bg); color: var(--p1); }
+
+.badge-crit { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; background: var(--p0); color: white; padding: 3px 9px; border-radius: 4px; }
+.badge-high { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; background: var(--p1); color: white; padding: 3px 9px; border-radius: 4px; }
+.badge-med  { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; background: #D97706; color: white; padding: 3px 9px; border-radius: 4px; }
+
+.alert { border-left: 3px solid var(--p0); background: var(--p0-bg); padding: 16px 20px; border-radius: 0 8px 8px 0; margin: 14px 0; }
+.alert.warn { border-color: var(--p1); background: var(--p1-bg); }
+.alert.info { border-color: var(--cyan); background: var(--cyan-bg); }
+.alert p { margin: 0 0 8px 0; font-size: 14px; color: var(--text); }
+.alert p:last-child { margin: 0; }
+
+.cta-do { background: var(--p2-bg); border-left: 3px solid var(--p2); padding: 16px 20px; margin: 14px 0; border-radius: 0 8px 8px 0; }
+.cta-do .cta-label { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--p2); font-weight: 700; margin-bottom: 6px; }
+.cta-do p { margin: 0; font-size: 14px; color: var(--text); }
+.cta-issue { background: var(--p0-bg); border-left: 3px solid var(--p0); padding: 16px 20px; margin: 14px 0; border-radius: 0 8px 8px 0; }
+.cta-issue .cta-label { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--p0); font-weight: 700; margin-bottom: 6px; }
+.cta-issue p { margin: 0; font-size: 14px; color: var(--text); }
+.cta-fix { background: var(--bg-2); border-left: 3px solid var(--cyan); padding: 16px 20px; margin: 14px 0; border-radius: 0 8px 8px 0; }
+.cta-fix .cta-label { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--cyan); font-weight: 700; margin-bottom: 6px; }
+.cta-fix p { margin: 0; font-size: 14px; color: var(--text); }
+
+.task { margin: 28px 0; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; background: var(--bg-card); box-shadow: var(--shadow-sm); }
+.task-head { padding: 16px 20px; background: var(--bg-2); border-bottom: 1px solid var(--border); display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.task-head .num { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: var(--cyan); background: white; padding: 2px 7px; border-radius: 4px; border: 1px solid rgba(0,128,168,.2); }
+.task-head h3 { font-family: 'Poppins', sans-serif; font-size: 17px; font-weight: 600; color: var(--text); margin: 0; flex: 1; }
+.task-body { padding: 22px 26px; }
+.task-body > *:first-child { margin-top: 0; }
+.task-body > *:last-child { margin-bottom: 0; }
+
+code { font-family: 'JetBrains Mono', monospace; font-size: 13px; background: var(--bg-2); padding: 2px 6px; border-radius: 4px; color: var(--cyan-deep); font-weight: 500; }
+pre { background: var(--code-bg); color: var(--code-text); padding: 18px 22px; border-radius: 8px; overflow-x: auto; font-family: 'JetBrains Mono', monospace; font-size: 12px; line-height: 1.55; margin: 10px 0 18px 0; border-left: 3px solid var(--cyan); }
+pre code { background: transparent; color: var(--code-text); padding: 0; font-size: inherit; font-weight: 400; }
+pre .c-comment { color: var(--code-comment); font-style: italic; }
+pre .c-key { color: var(--code-key); }
+pre .c-str { color: var(--code-string); }
+pre .c-num { color: var(--code-num); }
+pre .c-tag { color: #FB7185; }
+pre .c-attr { color: var(--code-key); }
+
+.pill { display: inline-block; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; padding: 2px 8px; border-radius: 99px; }
+.pill-crit { background: #FECACA; color: #991B1B; }
+.pill-high { background: #FED7AA; color: #9A3412; }
+.pill-med  { background: #FEF08A; color: #854D0E; }
+.pill-low  { background: var(--bg-2); color: var(--text-muted); }
+.pill-nos  { background: rgba(0,128,168,.12); color: var(--cyan-deep); }
+.pill-sem  { background: #FED7AA; color: #9A3412; }
+
+.p-critical { background: var(--p0-bg); }
+.p-high     { background: var(--p1-bg); }
+.p-medium   { background: #FEFCE8; }
+
+.section-header { display: flex; align-items: baseline; gap: 12px; margin-bottom: 14px; padding-bottom: 8px; border-bottom: 1.5px solid var(--border); }
+.section-num { font-size: 11px; font-weight: 700; color: var(--text-muted); letter-spacing: 0.1em; font-family: 'JetBrains Mono', monospace; flex-shrink: 0; }
+
+.closing { margin-top: 64px; padding: 32px 38px; background: linear-gradient(135deg, #0080a8 0%, #08876e 100%); color: white; border-radius: 12px; }
+.closing h3 { font-family: 'Poppins', sans-serif; font-size: 20px; font-weight: 700; margin: 0 0 14px 0; color: white; }
+.closing p { color: rgba(255,255,255,0.88); margin-bottom: 12px; font-size: 14.5px; }
+.closing .sig { margin-top: 20px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,0.2); font-size: 13px; color: rgba(255,255,255,0.75); }
+.closing .sig strong { color: white; display: block; margin-bottom: 4px; font-family: 'Poppins', sans-serif; font-size: 15px; font-weight: 600; }
+
+footer.doc { margin-top: 32px; padding-top: 20px; border-top: 1px solid var(--border); font-size: 12px; color: var(--text-muted); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+
+@media print {
+  aside.toc { display: none; }
+  .layout { display: block; }
+  main.content { padding: 28px 48px; max-width: none; }
+  h2, h3, h4 { page-break-after: avoid; break-after: avoid; }
+  table { page-break-inside: avoid; break-inside: avoid; }
+  tr { page-break-inside: avoid; break-inside: avoid; }
+  pre { page-break-inside: avoid; break-inside: avoid; font-size: 11px; }
+  .task { page-break-inside: avoid; break-inside: avoid; }
+  .kpis { page-break-inside: avoid; break-inside: avoid; }
+  .alert, .cta-do, .cta-issue, .cta-fix { page-break-inside: avoid; break-inside: avoid; }
+  .part-sep { page-break-inside: avoid; break-inside: avoid; }
+  .closing { page-break-inside: avoid; break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+<div class="layout">
+
+<aside class="toc">
+  <div class="brand">Diego Fresno</div>
+  <div class="brand-sub">Consultoría SEO independiente</div>
+
+  <p class="toc-part">Parte I — Estado actual</p>
+  <ol>
+    <li>
+      <a href="#s-01">Visibilidad en buscadores</a>
+      <ul>
+        <li><a href="#s-01-http">HTTP/HTTPS crítico</a></li>
+        <li><a href="#s-01-comprar">Página /comprar-casa</a></li>
+        <li><a href="#s-01-marca">Dependencia de marca</a></li>
+        <li><a href="#s-01-nuda">Nuda propiedad</a></li>
+        <li><a href="#s-01-fiscal">Cluster fiscal</a></li>
+        <li><a href="#s-01-barrios">Páginas de barrio (24 landings)</a></li>
+        <li><a href="#s-01-agentes">/agentes — CTR anómalo</a></li>
+        <li><a href="#s-01-oportunidades">Alta visibilidad, CTR bajo</a></li>
+        <li><a href="#s-01-suiza">La Suiza (viral)</a></li>
+        <li><a href="#s-01-devices">Dispositivos</a></li>
+      </ul>
+    </li>
+    <li><a href="#s-02">Diagnóstico técnico</a></li>
+    <li><a href="#s-03">Autoridad externa</a></li>
+  </ol>
+
+  <p class="toc-part">Parte II — Ejecutamos nosotros</p>
+  <ol>
+    <li>
+      <a href="#s-04">Archivos via FTP</a>
+      <ul>
+        <li><a href="#t-robots">robots.txt</a></li>
+        <li><a href="#t-sitemap">sitemap.xml</a></li>
+        <li><a href="#t-llms">llms.txt</a></li>
+        <li><a href="#t-indexnow">IndexNow</a></li>
+        <li><a href="#t-bing">Bing Webmaster</a></li>
+        <li><a href="#t-lastmod">lastmod en sitemap</a></li>
+        <li><a href="#t-nap">teléfono NAP</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#s-05">Mejoras via Códigos (CMS)</a>
+      <ul>
+        <li><a href="#t-schema-global">Schema global</a></li>
+        <li><a href="#t-schema-ficha">Schema ficha</a></li>
+        <li><a href="#t-schema-breadcrumb">BreadcrumbList</a></li>
+        <li><a href="#t-canonical">Canonicals</a></li>
+        <li><a href="#t-titles">Titles y meta</a></li>
+        <li><a href="#t-leaflet">Leaflet + slick.js</a></li>
+        <li><a href="#t-mapa">Mapa embed</a></li>
+      </ul>
+    </li>
+    <li><a href="#s-06">Mejoras editoriales</a></li>
+  </ol>
+
+  <p class="toc-part">Parte III — Necesita IAGestión</p>
+  <ol>
+    <li><a href="#s-07">Requerimientos para IAGestión</a></li>
+  </ol>
+
+  <p class="toc-part">Resumen</p>
+  <ol>
+    <li><a href="#s-prioridades">Tabla de prioridades</a></li>
+  </ol>
+</aside>
+
+<main class="content">
+
+<header class="hero">
+  <div style="margin-bottom:1.25rem;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3000 800" width="180" height="48" aria-label="diegofresno.com">
+      <text x="0" y="630" font-family="'Inter','Segoe UI',Arial,sans-serif" font-size="320" font-weight="900" fill="#0f1c2e" letter-spacing="-10">diegofresno<tspan fill="#0080a8">.com</tspan></text>
+    </svg>
+  </div>
+  <div class="eyebrow">Auditoría SEO · Mes 1 · Junio 2026</div>
+  <h1>Auditoría SEO — agencialaplaya.com</h1>
+  <p class="lede">Diagnóstico completo del sitio: estado actual de visibilidad y técnica, mejoras que ejecutamos directamente con acceso FTP y CMS, y requerimientos para el equipo de IAGestión.</p>
+  <div class="meta">
+    <div><div class="label">Preparado por</div><div class="val">Diego Fresno · Consultor SEO</div></div>
+    <div><div class="label">Para</div><div class="val">César Nozal · Agencia La Playa</div></div>
+    <div><div class="label">Dominio</div><div class="val">agencialaplaya.com</div></div>
+    <div><div class="label">Fecha</div><div class="val">30 de junio de 2026 (v3)</div></div>
+  </div>
+</header>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     PARTE I — ESTADO ACTUAL
+══════════════════════════════════════════════════════════════ -->
+
+<div class="part-sep">
+  <div class="part-label">Parte I</div>
+  <h2>Estado actual</h2>
+  <p>Qué está posicionando, qué está fallando técnicamente y cuál es el punto de partida real del sitio.</p>
+</div>
+
+
+<!-- S-01: VISIBILIDAD -->
+<section id="s-01">
+  <h2><span class="num">01</span> Visibilidad en buscadores</h2>
+
+  <p>Datos del periodo analizado: <strong>últimos 16 meses</strong> (febrero 2025 – junio 2026).</p>
+
+  <div class="kpis">
+    <div class="kpi"><div class="kpi-value">25.601</div><div class="kpi-label">Clics totales</div></div>
+    <div class="kpi"><div class="kpi-value">986.940</div><div class="kpi-label">Impresiones</div></div>
+    <div class="kpi"><div class="kpi-value">2.6%</div><div class="kpi-label">CTR medio</div></div>
+    <div class="kpi"><div class="kpi-value">9.0</div><div class="kpi-label">Posición media</div></div>
+    <div class="kpi"><div class="kpi-value">~170</div><div class="kpi-label">Clics/día (jun 2026)</div></div>
+  </div>
+
+  <p>El sitio tiene un volumen de tráfico razonable para una inmobiliaria local con presencia únicamente en Asturias. La posición media de 9.0 significa que muchas páginas están en el borde de la primera y segunda página de Google — territorio donde pequeñas mejoras técnicas y de contenido tienen alto retorno. No hay señales de penalización algorítmica.</p>
+
+  <p>El pico de tráfico más alto del periodo fue el <strong>30 y 31 de marzo de 2026</strong> (603 y 496 clics respectivamente), relacionado con el post sobre la Pastelería La Suiza durante el periodo de mayor cobertura mediática del caso judicial. Desde entonces el tráfico se normalizó en un rango de 130–220 clics diarios.</p>
+
+
+  <h3 id="s-01-http">HTTP/HTTPS — problema crítico de duplicado</h3>
+  <span class="badge-crit">Crítico</span>
+
+  <div class="alert" style="margin-top: 14px;">
+    <p><strong>La versión HTTP del sitio está indexada y posiciona mejor que la HTTPS.</strong> Esto parte la autoridad acumulada entre dos URLs que deberían ser una sola.</p>
+  </div>
+
+  <table>
+    <thead><tr><th>Versión</th><th>Clics</th><th>Impresiones</th><th>CTR</th><th>Posición</th></tr></thead>
+    <tbody>
+      <tr>
+        <td class="td-mono">https://www.agencialaplaya.com/</td>
+        <td class="td-num">5.295</td><td class="td-num">74.080</td><td>7.15%</td><td class="td-pos">14.73</td>
+      </tr>
+      <tr>
+        <td class="td-mono">http://www.agencialaplaya.com/</td>
+        <td class="td-num num-bad">4.285</td><td class="td-num num-bad">95.738</td><td class="num-bad">4.48%</td><td class="td-pos num-bad">7.02</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>La URL insegura acumula más impresiones y posiciona a 7.02 mientras la HTTPS va a 14.73. El redirect 301 de HTTP → HTTPS no está aplicándose correctamente a nivel servidor, o hay canonicals en el HTML que aún apuntan a HTTP. <strong>Este es el problema técnico de mayor impacto del sitio.</strong></p>
+
+
+  <h3 id="s-01-comprar">La página más valiosa está infraoptimizada</h3>
+  <span class="badge-high">Alta prioridad</span>
+
+  <p style="margin-top: 14px;"><code>/comprar-casa</code> concentra todo el tráfico transaccional de "pisos en venta en Gijón": <strong>208.862 impresiones</strong> a posición 6.74 con CTR 1.77%. Un salto de 2-3 posiciones llevaría el CTR al 8-10%, lo que equivale a multiplicar por 4-5 los clics actuales.</p>
+
+  <table>
+    <thead><tr><th>Keyword</th><th>Clics</th><th>Impresiones</th><th>CTR</th><th>Posición</th></tr></thead>
+    <tbody>
+      <tr><td>pisos en venta gijon</td><td class="td-num">335</td><td class="td-num">13.634</td><td>2.46%</td><td class="td-pos">4.32</td></tr>
+      <tr><td>pisos gijon</td><td class="td-num">157</td><td class="td-num">9.126</td><td>1.72%</td><td class="td-pos">4.54</td></tr>
+      <tr><td>venta pisos gijon</td><td class="td-num">133</td><td class="td-num">8.778</td><td>1.52%</td><td class="td-pos">5.04</td></tr>
+      <tr><td>pisos en gijon</td><td class="td-num">128</td><td class="td-num">7.716</td><td>1.66%</td><td class="td-pos">5.79</td></tr>
+      <tr><td>comprar piso gijon</td><td class="td-num">55</td><td class="td-num">4.094</td><td>1.34%</td><td class="td-pos">5.08</td></tr>
+    </tbody>
+  </table>
+
+  <h4 style="margin:2rem 0 .75rem;font-size:.85rem;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);font-weight:600;">Top 20 keywords por clics · feb 2025 – jun 2026</h4>
+  <table>
+    <thead><tr><th>Keyword</th><th>Clics</th><th>Impresiones</th><th>CTR</th><th>Posición</th></tr></thead>
+    <tbody>
+      <tr><td>agencia la playa</td><td class="td-num">4.589</td><td class="td-num">6.770</td><td>67.78%</td><td class="td-pos">1.10</td></tr>
+      <tr><td>agencia la playa gijon</td><td class="td-num">579</td><td class="td-num">1.196</td><td>48.41%</td><td class="td-pos">1.91</td></tr>
+      <tr><td>pastelería la suiza gijón</td><td class="td-num">425</td><td class="td-num">2.312</td><td>18.38%</td><td class="td-pos">5.77</td></tr>
+      <tr><td>inmobiliaria la playa gijon</td><td class="td-num">389</td><td class="td-num">786</td><td>49.49%</td><td class="td-pos">1.48</td></tr>
+      <tr><td>pisos en venta gijon</td><td class="td-num">335</td><td class="td-num">13.634</td><td>2.46%</td><td class="td-pos">4.32</td></tr>
+      <tr><td>inmobiliarias gijon</td><td class="td-num">245</td><td class="td-num">2.412</td><td>10.16%</td><td class="td-pos">1.66</td></tr>
+      <tr><td>inmobiliaria gijon</td><td class="td-num">228</td><td class="td-num">2.376</td><td>9.60%</td><td class="td-pos">2.20</td></tr>
+      <tr><td>inmobiliaria la playa</td><td class="td-num">190</td><td class="td-num">509</td><td>37.33%</td><td class="td-pos">3.58</td></tr>
+      <tr><td>agencialaplaya</td><td class="td-num">179</td><td class="td-num">221</td><td>81.00%</td><td class="td-pos">1.00</td></tr>
+      <tr><td>pasteleria la suiza gijon</td><td class="td-num">176</td><td class="td-num">1.094</td><td>16.09%</td><td class="td-pos">5.14</td></tr>
+      <tr><td>pisos gijon</td><td class="td-num">157</td><td class="td-num">9.126</td><td>1.72%</td><td class="td-pos">4.54</td></tr>
+      <tr><td>pastelería la suiza gijón donde estaba</td><td class="td-num">146</td><td class="td-num">449</td><td>32.52%</td><td class="td-pos">1.80</td></tr>
+      <tr><td>venta pisos gijon</td><td class="td-num">133</td><td class="td-num">8.778</td><td>1.52%</td><td class="td-pos">5.04</td></tr>
+      <tr><td>pisos en gijon</td><td class="td-num">128</td><td class="td-num">7.716</td><td>1.66%</td><td class="td-pos">5.79</td></tr>
+      <tr><td>confitería la suiza gijón</td><td class="td-num">128</td><td class="td-num">298</td><td>42.95%</td><td class="td-pos">2.27</td></tr>
+      <tr><td>agencia playa</td><td class="td-num">127</td><td class="td-num">252</td><td>50.40%</td><td class="td-pos">3.30</td></tr>
+      <tr><td>agencia inmobiliaria la playa</td><td class="td-num">109</td><td class="td-num">213</td><td>51.17%</td><td class="td-pos">1.00</td></tr>
+      <tr><td>inmobiliarias asturias</td><td class="td-num">106</td><td class="td-num">1.586</td><td>6.68%</td><td class="td-pos">4.02</td></tr>
+      <tr><td>la playa agencia</td><td class="td-num">102</td><td class="td-num">140</td><td>72.86%</td><td class="td-pos">1.08</td></tr>
+      <tr><td>la suiza gijon pasteleria</td><td class="td-num">99</td><td class="td-num">406</td><td>24.38%</td><td class="td-pos">4.55</td></tr>
+    </tbody>
+  </table>
+
+  <p>El title actual es genérico. Sin H1 claro, sin texto introductorio con las keywords principales, sin schema <code>ItemList</code>.</p>
+
+
+  <h3 id="s-01-marca">Alta dependencia de tráfico de marca</h3>
+
+  <p>Entre el 55-60% del tráfico total proviene de búsquedas de marca. Es una señal positiva de reconocimiento local, pero implica que el SEO no-marca genera menos de 10.000 clics en 16 meses. El objetivo del trabajo que presentamos es crecer ese segmento.</p>
+
+  <table>
+    <thead><tr><th>Keyword de marca</th><th>Clics</th><th>Posición</th></tr></thead>
+    <tbody>
+      <tr><td>agencia la playa</td><td class="td-num">4.589</td><td class="td-pos">1.1</td></tr>
+      <tr><td>agencia la playa gijon</td><td class="td-num">579</td><td class="td-pos">1.91</td></tr>
+      <tr><td>inmobiliaria la playa gijon</td><td class="td-num">389</td><td class="td-pos">1.48</td></tr>
+      <tr><td>inmobiliaria la playa</td><td class="td-num">190</td><td class="td-pos">3.58</td></tr>
+      <tr><td>agencialaplaya</td><td class="td-num">179</td><td class="td-pos">1.0</td></tr>
+    </tbody>
+  </table>
+
+
+  <h3 id="s-01-nuda">Cluster "nuda propiedad" — en el borde de la segunda página</h3>
+  <span class="badge-med">Prioridad media</span>
+
+  <p style="margin-top: 14px;"><code>/comprar-o-vender-nuda-propiedad</code>: <strong>30.351 impresiones</strong> a posición 10.46, CTR 1.11%. Está literalmente en el límite entre primera y segunda página de resultados. Ampliar el contenido y añadir FAQs con schema podría llevarlo a posición 5-7 multiplicando los clics por 3-4.</p>
+
+  <table>
+    <thead><tr><th>Keyword</th><th>Clics</th><th>Impresiones</th><th>CTR</th><th>Posición</th></tr></thead>
+    <tbody>
+      <tr><td>nuda propiedad</td><td class="td-num">8</td><td class="td-num">4.131</td><td class="num-bad">0.19%</td><td class="td-pos">11.77</td></tr>
+      <tr><td>nuda propiedad opiniones</td><td class="td-num">9</td><td class="td-num">128</td><td class="num-good">7.03%</td><td class="td-pos">2.83</td></tr>
+      <tr><td>comprar nuda propiedad opiniones</td><td class="td-num">8</td><td class="td-num">296</td><td>2.70%</td><td class="td-pos">1.72</td></tr>
+      <tr><td>nuda propiedad gijon</td><td class="td-num">5</td><td class="td-num">148</td><td>3.38%</td><td class="td-pos">9.94</td></tr>
+    </tbody>
+  </table>
+
+
+  <h3 id="s-01-fiscal">Cluster fiscal y legal — 150.000 impresiones con CTR muy bajo</h3>
+  <span class="badge-med">Prioridad media</span>
+
+  <p style="margin-top: 14px;">Siete posts del blog sobre fiscalidad e impuestos de compraventa acumulan impresiones masivas con CTR por debajo del 1.5%. Son contenidos de alta intención (gente investigando antes de comprar o vender), perfectos para convertir en leads con pequeños ajustes.</p>
+
+  <table>
+    <thead><tr><th>Página</th><th>Clics</th><th>Impresiones</th><th>CTR</th><th>Posición</th></tr></thead>
+    <tbody>
+      <tr><td class="td-mono">/blog/que-entiende-hacienda-vivienda-habitual/</td><td class="td-num">400</td><td class="td-num">38.653</td><td>1.03%</td><td class="td-pos">7.73</td></tr>
+      <tr><td class="td-mono">/blog/tasacion-por-encima-de-precio-paga-mas-impuestos/</td><td class="td-num">333</td><td class="td-num">24.583</td><td>1.35%</td><td class="td-pos">9.17</td></tr>
+      <tr><td class="td-mono">/impuestos-compra-venta-comprador-vendedor</td><td class="td-num">110</td><td class="td-num">24.941</td><td class="num-bad">0.44%</td><td class="td-pos">8.34</td></tr>
+      <tr><td class="td-mono">/blog/gastos-deducibles-venta-casa/</td><td class="td-num">154</td><td class="td-num">19.096</td><td>0.81%</td><td class="td-pos">8.70</td></tr>
+      <tr><td class="td-mono">/blog/diferencia-condicion-suspensiva-resolutoria/</td><td class="td-num">109</td><td class="td-num">17.418</td><td>0.63%</td><td class="td-pos">6.20</td></tr>
+      <tr><td class="td-mono">/blog/derechos-reales/</td><td class="td-num">10</td><td class="td-num">17.113</td><td class="num-bad">0.06%</td><td class="td-pos">9.36</td></tr>
+      <tr><td class="td-mono">/blog/la-inmatriculacion/</td><td class="td-num">117</td><td class="td-num">12.055</td><td>0.97%</td><td class="td-pos">7.45</td></tr>
+    </tbody>
+  </table>
+
+
+  <h3 id="s-01-barrios">Páginas de barrio — buen posicionamiento, CTR mejorable</h3>
+  <span class="badge-high">Alta prioridad</span>
+
+  <p style="margin-top: 14px;">El sitio tiene <strong>24 landings de barrio</strong> indexadas. Todas posicionan entre la posición 6 y 11 de media — dentro del top 10, territorio donde un title bien trabajado multiplica el CTR. Los títulos actuales son genéricos y no incluyen la intención principal ("pisos en venta en [barrio]"). Las impresiones acumuladas de las 24 páginas superan las <strong>100.000 impresiones</strong> con CTR medio por debajo del 1.5%.</p>
+
+  <table>
+    <thead><tr><th>Página</th><th>Clics</th><th>Impresiones</th><th>CTR</th><th>Posición</th></tr></thead>
+    <tbody>
+      <tr><td class="td-mono">/sabes-cual-es-el-barrio-de-gijon</td><td class="td-num num-good">558</td><td class="td-num">42.671</td><td>1.31%</td><td class="td-pos">3.98</td></tr>
+      <tr><td class="td-mono">/blog/gijon-zonas-vivir/</td><td class="td-num">474</td><td class="td-num">17.288</td><td class="num-good">2.74%</td><td class="td-pos">7.13</td></tr>
+      <tr><td class="td-mono">/viesques</td><td class="td-num">242</td><td class="td-num">16.416</td><td class="num-warn">1.47%</td><td class="td-pos">7.07</td></tr>
+      <tr><td class="td-mono">/montevil</td><td class="td-num">153</td><td class="td-num">6.940</td><td class="num-good">2.20%</td><td class="td-pos">6.37</td></tr>
+      <tr><td class="td-mono">/llano</td><td class="td-num">43</td><td class="td-num">6.040</td><td class="num-bad">0.71%</td><td class="td-pos">7.62</td></tr>
+      <tr><td class="td-mono">/laviada</td><td class="td-num">61</td><td class="td-num">5.408</td><td class="num-warn">1.13%</td><td class="td-pos">6.86</td></tr>
+      <tr><td class="td-mono">/la-arena</td><td class="td-num">36</td><td class="td-num">4.816</td><td class="num-bad">0.75%</td><td class="td-pos">7.10</td></tr>
+      <tr><td class="td-mono">/natahoyo</td><td class="td-num">47</td><td class="td-num">4.513</td><td class="num-warn">1.04%</td><td class="td-pos">8.56</td></tr>
+      <tr><td class="td-mono">/tremanes</td><td class="td-num">37</td><td class="td-num">3.246</td><td class="num-warn">1.14%</td><td class="td-pos">7.72</td></tr>
+      <tr><td class="td-mono">/nuevo-roces-gijon</td><td class="td-num">33</td><td class="td-num">2.851</td><td class="num-warn">1.16%</td><td class="td-pos num-bad">14.14</td></tr>
+      <tr><td class="td-mono">/nuevo-gijon</td><td class="td-num">39</td><td class="td-num">2.846</td><td class="num-warn">1.37%</td><td class="td-pos">7.07</td></tr>
+      <tr><td class="td-mono">/moreda</td><td class="td-num">28</td><td class="td-num">2.398</td><td class="num-warn">1.17%</td><td class="td-pos">6.10</td></tr>
+      <tr><td class="td-mono">/la-calzada</td><td class="td-num">17</td><td class="td-num">2.214</td><td class="num-bad">0.77%</td><td class="td-pos num-bad">10.49</td></tr>
+      <tr><td class="td-mono">/somio</td><td class="td-num">13</td><td class="td-num">2.022</td><td class="num-bad">0.64%</td><td class="td-pos">7.48</td></tr>
+      <tr><td class="td-mono">/ceares</td><td class="td-num">27</td><td class="td-num">1.800</td><td class="num-warn">1.50%</td><td class="td-pos">7.15</td></tr>
+      <tr><td class="td-mono">/jove</td><td class="td-num">46</td><td class="td-num">1.769</td><td class="num-good">2.60%</td><td class="td-pos">8.56</td></tr>
+      <tr><td class="td-mono">/centro-gijon</td><td class="td-num">11</td><td class="td-num">1.647</td><td class="num-bad">0.67%</td><td class="td-pos">8.10</td></tr>
+      <tr><td class="td-mono">/santa-barbara</td><td class="td-num">29</td><td class="td-num">1.414</td><td class="num-good">2.05%</td><td class="td-pos">8.38</td></tr>
+      <tr><td class="td-mono">/el-bibio</td><td class="td-num">27</td><td class="td-num">1.405</td><td class="num-good">1.92%</td><td class="td-pos">8.69</td></tr>
+      <tr><td class="td-mono">/coto</td><td class="td-num">20</td><td class="td-num">1.353</td><td class="num-warn">1.48%</td><td class="td-pos num-bad">10.92</td></tr>
+      <tr><td class="td-mono">/mestas</td><td class="td-num">23</td><td class="td-num">1.317</td><td class="num-warn">1.75%</td><td class="td-pos">7.47</td></tr>
+      <tr><td class="td-mono">/cimadevilla</td><td class="td-num">15</td><td class="td-num">1.270</td><td class="num-warn">1.18%</td><td class="td-pos">8.87</td></tr>
+      <tr><td class="td-mono">/el-llavianu</td><td class="td-num">10</td><td class="td-num">618</td><td class="num-warn">1.62%</td><td class="td-pos num-bad">11.80</td></tr>
+      <tr><td class="td-mono">/pumarin</td><td class="td-num">9</td><td class="td-num">562</td><td class="num-warn">1.60%</td><td class="td-pos">9.77</td></tr>
+      <tr><td class="td-mono">/contrueces</td><td class="td-num">8</td><td class="td-num">419</td><td class="num-good">1.91%</td><td class="td-pos num-bad">10.54</td></tr>
+      <tr><td class="td-mono">/la-brana</td><td class="td-num">10</td><td class="td-num">222</td><td class="num-good">4.50%</td><td class="td-pos">9.62</td></tr>
+    </tbody>
+  </table>
+  <p>Las páginas con mayor potencial inmediato son <code>/viesques</code> (16.416 imp), <code>/llano</code> (6.040 imp) y <code>/laviada</code> (5.408 imp) — las tres con posición entre 7 y 8 y CTR por debajo del 1.5%. Un title orientado a intención comercial ("Pisos en venta en Viesques · Agencia La Playa") puede doblar el CTR sin tocar el posicionamiento. La página general <code>/sabes-cual-es-el-barrio</code> (42.671 imp, pos 3.98) debe convertirse en hub de enlazado interno hacia todas las landings específicas.</p>
+
+
+  <h3 id="s-01-agentes">Página /agentes — CTR anómalo para su posición</h3>
+  <span class="badge-high">Alta prioridad</span>
+
+  <p style="margin-top: 14px;">La página de agentes aparece en posición <strong>2.48</strong> de media — prácticamente top 2 — con 10.251 impresiones. Sin embargo solo genera 74 clics y un CTR del <strong>0.72%</strong>. Para esa posición el CTR esperado ronda el 10–15%. Hay una discrepancia de ×15 que indica un snippet roto: title incorrecto, meta description ausente o contenido que no coincide con la búsqueda.</p>
+
+  <table>
+    <thead><tr><th>Página</th><th>Clics</th><th>Impresiones</th><th>CTR</th><th>Posición</th></tr></thead>
+    <tbody>
+      <tr><td class="td-mono">/agentes</td><td class="td-num">74</td><td class="td-num">10.251</td><td class="num-bad">0.72%</td><td class="td-pos num-good">2.48</td></tr>
+    </tbody>
+  </table>
+  <p>Acción: revisar el title y meta description actuales de <code>/agentes</code>, corregirlos para que reflejen la intención de búsqueda ("agentes inmobiliarios en Gijón") y añadir schema <code>Person</code> por agente. Con un CTR del 8% (conservador para pos 2) pasaría de 74 a ~820 clics/periodo con el mismo posicionamiento.</p>
+
+
+  <h3 id="s-01-oportunidades">Páginas con alta visibilidad y CTR muy bajo</h3>
+
+  <p>Páginas que acumulan muchas impresiones pero apenas convierten esa visibilidad en tráfico. Son oportunidades de mejora de snippet sin necesidad de trabajo de posicionamiento.</p>
+
+  <table>
+    <thead><tr><th>Página</th><th>Clics</th><th>Impresiones</th><th>CTR</th><th>Posición</th></tr></thead>
+    <tbody>
+      <tr><td class="td-mono">/comprar-casa</td><td class="td-num">3.699</td><td class="td-num">208.862</td><td class="num-warn">1.77%</td><td class="td-pos">6.74</td></tr>
+      <tr><td class="td-mono">/agentes</td><td class="td-num">74</td><td class="td-num">10.251</td><td class="num-bad">0.72%</td><td class="td-pos num-good">2.48</td></tr>
+      <tr><td class="td-mono">/nosotros</td><td class="td-num">24</td><td class="td-num">6.416</td><td class="num-bad">0.37%</td><td class="td-pos num-good">2.53</td></tr>
+      <tr><td class="td-mono">/contacto</td><td class="td-num">54</td><td class="td-num">11.330</td><td class="num-bad">0.48%</td><td class="td-pos">3.35</td></tr>
+      <tr><td class="td-mono">/blog/impuesto-transmisiones-asturias/</td><td class="td-num">31</td><td class="td-num">13.441</td><td class="num-bad">0.23%</td><td class="td-pos">9.04</td></tr>
+      <tr><td class="td-mono">/que-son-las-licencias-de-obra-y-como-solicitarlas</td><td class="td-num">44</td><td class="td-num">17.086</td><td class="num-bad">0.26%</td><td class="td-pos num-bad">25.62</td></tr>
+      <tr><td class="td-mono">/blog/cuanto-se-paga-por-el-impuesto-sobre-sucesiones…</td><td class="td-num">103</td><td class="td-num">20.869</td><td class="num-bad">0.49%</td><td class="td-pos num-bad">10.71</td></tr>
+    </tbody>
+  </table>
+  <p><strong>/nosotros</strong> en posición 2.53 con CTR 0.37% es la anomalía más llamativa: aparece casi siempre en top 3 pero casi nadie hace clic. El snippet corporativo genérico no responde ninguna intención de búsqueda — revisarlo con un title orientado a confianza y diferenciación. <strong>/que-son-las-licencias-de-obra</strong> en posición 25.62 genera 17.086 impresiones porque compite en una keyword de alto volumen donde no tiene posibilidad real — o se trabaja el contenido para subir a top 10, o se noindex para evitar crawl budget desperdiciado.</p>
+
+
+  <h3 id="s-01-suiza">Tráfico viral — La Suiza</h3>
+
+  <p>El post sobre la Pastelería La Suiza genera <strong>1.572 clics con 11.5% de CTR</strong>. El origen es un caso judicial con fuerte repercusión mediática (cubierto por LNE en junio 2024) que disparó búsquedas locales. El sitio tenía un post publicado y llegó a posicionarse top 1 para esas consultas — tráfico capturado por estar bien posicionado en el momento del pico, no por el contenido en sí.</p>
+  <p>El perfil del visitante es local gijonés con alto conocimiento de la ciudad — exactamente el perfil de comprador o vendedor potencial. Conviene aprovechar ese tráfico mientras persiste.</p>
+
+
+  <h3 id="s-01-devices">Dispositivos — gap significativo en escritorio</h3>
+
+  <table>
+    <thead><tr><th>Dispositivo</th><th>Clics</th><th>% tráfico</th><th>CTR</th><th>Posición media</th></tr></thead>
+    <tbody>
+      <tr><td>Móvil</td><td class="td-num">19.215</td><td>75%</td><td class="num-good">2.92%</td><td class="td-pos">7.26</td></tr>
+      <tr><td>Escritorio</td><td class="td-num">5.716</td><td>22%</td><td class="num-warn">1.84%</td><td class="td-pos num-bad">12.48</td></tr>
+      <tr><td>Tablet</td><td class="td-num">670</td><td>3%</td><td>3.69%</td><td class="td-pos">6.88</td></tr>
+    </tbody>
+  </table>
+  <p>Escritorio posiciona 5 puestos peor que móvil. En inmobiliaria el escritorio es el dispositivo donde los usuarios toman decisiones finales y pasan más tiempo comparando propiedades. Este gap está relacionado con los problemas técnicos del sitio.</p>
+</section>
+
+
+<!-- S-02: DIAGNÓSTICO TÉCNICO -->
+<section id="s-02">
+  <h2><span class="num">02</span> Diagnóstico técnico</h2>
+
+  <p>Resultado del análisis del sitio. Los problemas están ordenados por impacto esperado en el posicionamiento.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 6%;">#</th>
+        <th style="width: 40%;">Problema</th>
+        <th style="width: 14%;">Prioridad</th>
+        <th>Quién lo resuelve</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="p-critical">
+        <td><span class="td-mono">T1</span></td>
+        <td>HTTP → HTTPS: redirect 301 no se aplica. La versión HTTP está indexada y posiciona mejor que HTTPS.</td>
+        <td><span class="pill pill-crit">Crítico</span></td>
+        <td><span class="pill pill-nos">Nosotros</span></td>
+      </tr>
+      <tr class="p-critical">
+        <td><span class="td-mono">T2</span></td>
+        <td>Soft 404: URLs de inmuebles inexistentes o vendidos redirigen con 301 a la home en lugar de devolver 410 / 404.</td>
+        <td><span class="pill pill-crit">Crítico</span></td>
+        <td><span class="pill pill-sem">IAGestión</span></td>
+      </tr>
+      <tr class="p-critical">
+        <td><span class="td-mono">T3</span></td>
+        <td>Canonicals incorrectos: categorías apuntan a home, fichas no tienen canonical.</td>
+        <td><span class="pill pill-crit">Crítico</span></td>
+        <td><span class="pill pill-nos">Nosotros</span></td>
+      </tr>
+      <tr class="p-high">
+        <td><span class="td-mono">T4</span></td>
+        <td>robots.txt sin protocolo https:// en la URL del sitemap. Sin declaración de Allow a bots de IA.</td>
+        <td><span class="pill pill-high">Alta</span></td>
+        <td><span class="pill pill-nos">Nosotros</span></td>
+      </tr>
+      <tr class="p-high">
+        <td><span class="td-mono">T5</span></td>
+        <td>sitemap.xml devuelve 404. Las páginas estáticas (home, vender, alquilar, blog...) no están en ningún sitemap.</td>
+        <td><span class="pill pill-high">Alta</span></td>
+        <td><span class="pill pill-nos">Nosotros</span></td>
+      </tr>
+      <tr class="p-high">
+        <td><span class="td-mono">T6</span></td>
+        <td>Titles genéricos en mayúsculas en fichas de inmueble. 26 landings de barrio con el mismo title corporativo. Sin meta descriptions en fichas.</td>
+        <td><span class="pill pill-high">Alta</span></td>
+        <td><span class="pill pill-nos">Nosotros</span></td>
+      </tr>
+      <tr class="p-high">
+        <td><span class="td-mono">T7</span></td>
+        <td>Sin datos estructurados JSON-LD en el sitio: ni Organization, ni RealEstateListing por ficha, ni BreadcrumbList, ni FAQPage.</td>
+        <td><span class="pill pill-high">Alta</span></td>
+        <td><span class="pill pill-nos">Nosotros</span></td>
+      </tr>
+      <tr class="p-high">
+        <td><span class="td-mono">T8</span></td>
+        <td>NAP inconsistente: dos teléfonos distintos en la misma web (692 en home, 984 en agentes). Google lo lee como ambigüedad de identidad local.</td>
+        <td><span class="pill pill-high">Alta</span></td>
+        <td><span class="pill pill-nos">Nosotros</span></td>
+      </tr>
+      <tr>
+        <td><span class="td-mono">T9</span></td>
+        <td>llms.txt ausente: ChatGPT, Perplexity y Bing Copilot no tienen señal estructurada del sitio.</td>
+        <td><span class="pill pill-high">Alta</span></td>
+        <td><span class="pill pill-nos">Nosotros</span></td>
+      </tr>
+      <tr>
+        <td><span class="td-mono">T10</span></td>
+        <td>sitemap dinámico sin &lt;lastmod&gt;. Google no sabe cuándo se actualizó cada ficha.</td>
+        <td><span class="pill pill-med">Media</span></td>
+        <td><span class="pill pill-nos">Nosotros</span></td>
+      </tr>
+      <tr>
+        <td><span class="td-mono">T11</span></td>
+        <td>Encoding mojibake en image:title del sitemap — pendiente de verificar, posiblemente ya resuelto.</td>
+        <td><span class="pill pill-med">Media</span></td>
+        <td><span class="pill pill-nos">Nosotros</span></td>
+      </tr>
+      <tr>
+        <td><span class="td-mono">T12</span></td>
+        <td>Leaflet 1.0.3 (2016, 500KB sin minificar, sin defer). Versión actual 1.9.4.</td>
+        <td><span class="pill pill-med">Media</span></td>
+        <td><span class="pill pill-nos">Nosotros</span></td>
+      </tr>
+      <tr>
+        <td><span class="td-mono">T13</span></td>
+        <td>slick.js cargado dos veces en la home. Doble descarga y parseo innecesarios.</td>
+        <td><span class="pill pill-med">Media</span></td>
+        <td><span class="pill pill-nos">Nosotros</span></td>
+      </tr>
+      <tr>
+        <td><span class="td-mono">T14</span></td>
+        <td>Imágenes JPG/PNG sin WebP, sin srcset, sin loading="lazy", alt descriptivos genéricos.</td>
+        <td><span class="pill pill-med">Media</span></td>
+        <td><span class="pill pill-sem">IAGestión</span></td>
+      </tr>
+      <tr>
+        <td><span class="td-mono">T15</span></td>
+        <td>Security headers ausentes: HSTS, X-Content-Type-Options, X-Frame-Options, Referrer-Policy.</td>
+        <td><span class="pill pill-low">Baja</span></td>
+        <td><span class="pill pill-sem">IAGestión</span></td>
+      </tr>
+      <tr>
+        <td><span class="td-mono">T16</span></td>
+        <td>URLs CamelCase en enlaces internos desde home (ejemplo: /inmueble/Pisos-Venta-...). Generan cadenas de 301 innecesarias.</td>
+        <td><span class="pill pill-low">Baja</span></td>
+        <td><span class="pill pill-sem">IAGestión</span></td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+
+<!-- S-03: AUTORIDAD EXTERNA -->
+<section id="s-03">
+  <h2><span class="num">03</span> Autoridad externa</h2>
+
+  <p>Análisis del perfil de backlinks del dominio a junio 2026.</p>
+
+  <div class="kpis">
+    <div class="kpi"><div class="kpi-value">3.514</div><div class="kpi-label">URLs entrantes</div></div>
+    <div class="kpi"><div class="kpi-value">162</div><div class="kpi-label">Dominios únicos</div></div>
+    <div class="kpi"><div class="kpi-value">88%</div><div class="kpi-label">Dofollow</div></div>
+    <div class="kpi"><div class="kpi-value">~12</div><div class="kpi-label">Dominios reales de calidad</div></div>
+  </div>
+
+  <p>El volumen de 3.514 URLs es engañoso: <strong>dos dominios concentran el 58% de todos los backlinks</strong>. <code>asocias.net</code> (asociación inmobiliaria) aporta 1.118 links desde un único widget site-wide, y <code>prometoentrenar.blogspot.com</code> aporta 936 links desde un blog de baja autoridad que referencia el sitio en todas sus páginas.</p>
+
+  <p>Los dominios con valor real son pocos pero reconocibles del sector:</p>
+
+  <table>
+    <thead><tr><th>Dominio</th><th>Links</th><th>Tipo</th></tr></thead>
+    <tbody>
+      <tr><td>pisos.com</td><td class="td-num">20</td><td>Portal inmobiliario nacional</td></tr>
+      <tr><td>ivoox.com</td><td class="td-num">2</td><td>Plataforma de podcast</td></tr>
+      <tr><td>inmoblog.com</td><td class="td-num">3</td><td>Blog sectorial de marketing inmobiliario</td></tr>
+      <tr><td>qualisoptima.com</td><td class="td-num">363</td><td>Plataforma partner (widget, ecards de agentes)</td></tr>
+      <tr><td>tourmake.es</td><td class="td-num">52</td><td>Directorio de empresas local</td></tr>
+      <tr><td>blogasturias.com</td><td class="td-num">63</td><td>Directorio de blogs regionales</td></tr>
+    </tbody>
+  </table>
+
+  <p>No hay presencia en medios locales de referencia (LNE, El Comercio) ni en directorios nacionales de alta autoridad. El perfil refleja una agencia con gran reconocimiento offline que aún no se ha traducido en menciones editoriales online.</p>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     PARTE II — EJECUTAMOS NOSOTROS
+══════════════════════════════════════════════════════════════ -->
+
+<div class="part-sep">
+  <div class="part-label">Parte II</div>
+  <h2>Lo que ejecutamos nosotros</h2>
+  <p>Mejoras que podemos aplicar directamente con el acceso FTP y el editor de Códigos del CMS (Déjà Vu), sin necesidad de coordinar con IAGestión.</p>
+</div>
+
+
+<!-- S-04: FTP -->
+<section id="s-04">
+  <h2><span class="num">04</span> Archivos via FTP</h2>
+  <p>Archivos que subimos directamente a la raíz del dominio. Cambios sin riesgo — no tocan ninguna lógica existente.</p>
+
+
+  <div class="task" id="t-htaccess">
+    <div class="task-head">
+      <span class="sev crit">Crítico</span>
+      <span class="num">T4</span>
+      <h3>.htaccess — redirect HTTP → HTTPS (301 permanente)</h3>
+    </div>
+    <div class="task-body">
+      <div class="cta-issue">
+        <div class="cta-label">Estado actual</div>
+        <p>La versión HTTP del sitio está indexada y posiciona mejor que la HTTPS (HTTP pos. 7,02 · HTTPS pos. 14,73). La autoridad está partida entre dos versiones del mismo dominio. El redirect 301 de HTTP → HTTPS no se está aplicando correctamente a nivel servidor. El .htaccess del sitio ya tiene <code>RewriteEngine on</code> activo, lo que nos permite corregirlo directamente via FTP.</p>
+      </div>
+
+      <h4>Edición del .htaccess — añadir 2 líneas al inicio</h4>
+<pre><code>RewriteEngine on
+<span class="c-comment"># Forzar HTTPS — redirige cualquier petición HTTP a HTTPS</span>
+<span class="c-key">RewriteCond</span> %{HTTPS} off
+<span class="c-key">RewriteRule</span> ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+<span class="c-comment"># Resto de reglas existentes sin modificar</span>
+RewriteCond %{REQUEST_URI} !^/administra [NC]
+<span class="c-comment"># ...</span></code></pre>
+
+      <div class="cta-do">
+        <div class="cta-label">Acción</div>
+        <p>Descargar el <code>.htaccess</code> actual via FTP, añadir las dos líneas (<code>RewriteCond</code> + <code>RewriteRule</code>) justo después de <code>RewriteEngine on</code> y subir. Verificar con <code>curl -I http://www.agencialaplaya.com/</code> que devuelve <code>301 → https://</code>. Efecto: Google consolida toda la autoridad acumulada en la versión HTTPS en pocos días de rastreo.</p>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="task" id="t-robots">
+    <div class="task-head">
+      <span class="sev crit">Crítico</span>
+      <span class="num">T5</span>
+      <h3>robots.txt — corrección + allow a bots de IA</h3>
+    </div>
+    <div class="task-body">
+      <div class="cta-issue">
+        <div class="cta-label">Estado actual</div>
+        <p>La URL del sitemap en robots.txt no lleva <code>https://</code>. No hay declaración de Allow a los bots de ChatGPT, Perplexity, Bing Copilot ni ningún motor de IA.</p>
+      </div>
+
+      <h4>Archivo listo para subir via FTP — sobrescribir robots.txt</h4>
+<pre><code>User-agent: *
+Disallow: /wp-admin/
+Allow: /wp-admin/admin-ajax.php
+
+<span class="c-comment"># Allow explícito a bots de IA</span>
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: DuckAssistBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+Sitemap: https://www.agencialaplaya.com/sitemaps_inmuebles.php
+Sitemap: https://www.agencialaplaya.com/sitemap.xml</code></pre>
+
+      <div class="cta-do">
+        <div class="cta-label">Acción</div>
+        <p>Subir via FTP a la raíz del dominio. Verificar que <code>https://www.agencialaplaya.com/robots.txt</code> devuelve este contenido.</p>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="task" id="t-sitemap">
+    <div class="task-head">
+      <span class="sev p0">Alta</span>
+      <span class="num">T5</span>
+      <h3>sitemap.xml — páginas estáticas</h3>
+    </div>
+    <div class="task-body">
+      <div class="cta-issue">
+        <div class="cta-label">Estado actual</div>
+        <p><code>/sitemap.xml</code> devuelve 404. Las páginas estáticas (home, /vender, /alquilar, /blog, /obra-nueva, /contacto, /nosotros) no aparecen en ningún sitemap.</p>
+      </div>
+
+      <h4>Archivo listo para subir</h4>
+<pre><code><span class="c-tag">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="c-tag">&lt;urlset</span> <span class="c-attr">xmlns</span>=<span class="c-str">"http://www.sitemaps.org/schemas/sitemap/0.9"</span><span class="c-tag">&gt;</span>
+  <span class="c-tag">&lt;url&gt;&lt;loc&gt;</span>https://www.agencialaplaya.com/<span class="c-tag">&lt;/loc&gt;&lt;changefreq&gt;</span>weekly<span class="c-tag">&lt;/changefreq&gt;&lt;priority&gt;</span>1.0<span class="c-tag">&lt;/priority&gt;&lt;/url&gt;</span>
+  <span class="c-tag">&lt;url&gt;&lt;loc&gt;</span>https://www.agencialaplaya.com/comprar-casa<span class="c-tag">&lt;/loc&gt;&lt;changefreq&gt;</span>daily<span class="c-tag">&lt;/changefreq&gt;&lt;priority&gt;</span>0.9<span class="c-tag">&lt;/priority&gt;&lt;/url&gt;</span>
+  <span class="c-tag">&lt;url&gt;&lt;loc&gt;</span>https://www.agencialaplaya.com/vender<span class="c-tag">&lt;/loc&gt;&lt;changefreq&gt;</span>monthly<span class="c-tag">&lt;/changefreq&gt;&lt;priority&gt;</span>0.9<span class="c-tag">&lt;/priority&gt;&lt;/url&gt;</span>
+  <span class="c-tag">&lt;url&gt;&lt;loc&gt;</span>https://www.agencialaplaya.com/alquileres<span class="c-tag">&lt;/loc&gt;&lt;changefreq&gt;</span>daily<span class="c-tag">&lt;/changefreq&gt;&lt;priority&gt;</span>0.9<span class="c-tag">&lt;/priority&gt;&lt;/url&gt;</span>
+  <span class="c-tag">&lt;url&gt;&lt;loc&gt;</span>https://www.agencialaplaya.com/obra-nueva<span class="c-tag">&lt;/loc&gt;&lt;changefreq&gt;</span>weekly<span class="c-tag">&lt;/changefreq&gt;&lt;priority&gt;</span>0.8<span class="c-tag">&lt;/priority&gt;&lt;/url&gt;</span>
+  <span class="c-tag">&lt;url&gt;&lt;loc&gt;</span>https://www.agencialaplaya.com/nosotros<span class="c-tag">&lt;/loc&gt;&lt;changefreq&gt;</span>monthly<span class="c-tag">&lt;/changefreq&gt;&lt;priority&gt;</span>0.7<span class="c-tag">&lt;/priority&gt;&lt;/url&gt;</span>
+  <span class="c-tag">&lt;url&gt;&lt;loc&gt;</span>https://www.agencialaplaya.com/contacto<span class="c-tag">&lt;/loc&gt;&lt;changefreq&gt;</span>yearly<span class="c-tag">&lt;/changefreq&gt;&lt;priority&gt;</span>0.6<span class="c-tag">&lt;/priority&gt;&lt;/url&gt;</span>
+  <span class="c-tag">&lt;url&gt;&lt;loc&gt;</span>https://www.agencialaplaya.com/blog<span class="c-tag">&lt;/loc&gt;&lt;changefreq&gt;</span>weekly<span class="c-tag">&lt;/changefreq&gt;&lt;priority&gt;</span>0.7<span class="c-tag">&lt;/priority&gt;&lt;/url&gt;</span>
+<span class="c-tag">&lt;/urlset&gt;</span></code></pre>
+
+      <div class="cta-do">
+        <div class="cta-label">Acción</div>
+        <p>Subir a la raíz. Verificar que <code>https://www.agencialaplaya.com/sitemap.xml</code> devuelve 200 y el XML correctamente.</p>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="task" id="t-llms">
+    <div class="task-head">
+      <span class="sev p0">Alta</span>
+      <span class="num">T9</span>
+      <h3>llms.txt — visibilidad en ChatGPT, Perplexity y Copilot</h3>
+    </div>
+    <div class="task-body">
+      <div class="cta-issue">
+        <div class="cta-label">Estado actual</div>
+        <p><code>https://www.agencialaplaya.com/llms.txt</code> devuelve 404. Es el archivo que los motores de IA utilizan como señal de identidad y jerarquía de contenidos del sitio.</p>
+      </div>
+
+      <h4>Archivo listo para subir</h4>
+<pre><code><span class="c-key"># Agencia La Playa</span>
+
+> Inmobiliaria independiente con sede en Gijón (Asturias, España). Fundada por Francisco Pérez y César Nozal. Especializada en compra, venta y alquiler de viviendas en Gijón, Oviedo, Siero y el resto de Asturias. Primera inmobiliaria más recomendada de Gijón y séptima a nivel nacional, con 1.738 reseñas verificadas en Google y una valoración media de 4,9 sobre 5. Premio Fotocasa PRO 2024 a mejor RSC.
+
+<span class="c-key">## Sobre la agencia</span>
+- [Quiénes somos](https://www.agencialaplaya.com/nosotros): historia, fundadores, equipo
+- [Contacto](https://www.agencialaplaya.com/contacto): Avenida Pablo Iglesias 68, Gijón
+- [Premios y RSC](https://www.agencialaplaya.com/somos-solidarios): Fotocasa PRO 2024
+
+<span class="c-key">## Comprar</span>
+- [Buscador de inmuebles](https://www.agencialaplaya.com/comprar-casa): pisos, casas y locales en venta
+- [Obra nueva](https://www.agencialaplaya.com/obra-nueva): promociones de vivienda nueva
+
+<span class="c-key">## Alquilar</span>
+- [Buscador alquileres](https://www.agencialaplaya.com/alquileres): pisos y casas en alquiler
+
+<span class="c-key">## Vender</span>
+- [Servicios para propietarios](https://www.agencialaplaya.com/vender): valoración, captación, comercialización
+
+<span class="c-key">## Zonas atendidas</span>
+- Gijón: El Llano, La Arena, Centro, Coto, Pumarín, Natahoyo, Cimadevilla, Somió, El Bibio, Viesques
+- Asturias: Oviedo, Siero, El Berrón, Candás
+
+<span class="c-key">## Blog y podcast</span>
+- [Blog](https://www.agencialaplaya.com/blog): mercado inmobiliario asturiano
+- [Podcast El Rincón Inmobiliario](https://www.agencialaplaya.com/blog/podcast-live): semanal en Onda Cero
+
+<span class="c-key">## Datos clave</span>
+- 1.738+ reseñas en Google · valoración 4,9/5
+- 1ª inmobiliaria más recomendada de Gijón y Asturias
+- 7ª a nivel nacional · más de 15 años de actividad
+- Equipo de 15 personas residentes en Asturias
+
+<span class="c-key">## Contacto</span>
+- Dirección: Avenida Pablo Iglesias 68, 33204 Gijón, Asturias
+- Teléfono: +34 692 27 27 27
+- Email: info@agencialaplaya.com</code></pre>
+
+      <div class="cta-do">
+        <div class="cta-label">Acción</div>
+        <p>Subir a la raíz. Verificar que <code>https://www.agencialaplaya.com/llms.txt</code> devuelve <code>Content-Type: text/plain</code> y status 200.</p>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="task" id="t-indexnow">
+    <div class="task-head">
+      <span class="sev p1">Media</span>
+      <span class="num">—</span>
+      <h3>IndexNow — clave de verificación</h3>
+    </div>
+    <div class="task-body">
+      <p>IndexNow permite notificar a Bing, Yandex y Seznam en minutos cuando se publica o actualiza un inmueble, sin esperar al crawl natural. El paso previo es subir el archivo de verificación a la raíz.</p>
+      <div class="cta-do">
+        <div class="cta-label">Acción</div>
+        <p>Generamos la clave UUID y subimos el archivo <code>{KEY}.txt</code> a la raíz del dominio. Una vez verificado, podremos lanzar pings manuales cuando lo necesitemos. La integración automática con IAGestión (cada vez que se publica un inmueble) la coordina IAGestión.</p>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="task" id="t-bing">
+    <div class="task-head">
+      <span class="sev p0">Alta</span>
+      <span class="num">—</span>
+      <h3>Bing Webmaster Tools — verificación del sitio</h3>
+    </div>
+    <div class="task-body">
+      <div class="cta-fix">
+        <div class="cta-label">Por qué importa</div>
+        <p>Bing es el motor que alimenta el módulo de búsqueda de ChatGPT y Microsoft Copilot. Sin estar en Bing Webmaster Tools, estas plataformas tienen mucha menos visibilidad del sitio.</p>
+      </div>
+      <div class="cta-do">
+        <div class="cta-label">Acción</div>
+        <p>César accede a <strong>bing.com/webmasters</strong> y genera el archivo XML de verificación (<code>BingSiteAuth.xml</code>). Lo subimos via FTP a la raíz y completamos la verificación desde su panel.</p>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="task" id="t-lastmod">
+    <div class="task-head">
+      <span class="sev p0">Alta</span>
+      <span class="num">—</span>
+      <h3>sitemaps_inmuebles.php — añadir &lt;lastmod&gt;</h3>
+    </div>
+    <div class="task-body">
+      <div class="cta-issue">
+        <div class="cta-label">Estado actual</div>
+        <p>El sitemap dinámico lista ~600 fichas sin etiqueta <code>&lt;lastmod&gt;</code>. Google no sabe cuándo fue actualizada cada ficha y no puede priorizar el rastreo de las más recientes. El archivo <code>/sitemaps_inmuebles.php</code> está accesible via FTP y lo podemos editar directamente.</p>
+      </div>
+      <h4>Edición de sitemaps_inmuebles.php — añadir lastmod en el foreach</h4>
+<pre><code><span class="c-comment">// Dentro del foreach($inmuebles->inmuebles as $inmueble) — añadir tras &lt;loc&gt;:</span>
+<span class="c-key">if</span> (!empty($inmueble->FechaModificacion)) {
+    echo <span class="c-str">"    &lt;lastmod&gt;"</span> . date(<span class="c-str">'Y-m-d'</span>, strtotime($inmueble->FechaModificacion)) . <span class="c-str">"&lt;/lastmod&gt;\n"</span>;
+}
+<span class="c-comment">// Nombre del campo pendiente de confirmar con Víctor (IAGestión)</span></code></pre>
+      <div class="cta-do">
+        <div class="cta-label">Acción</div>
+        <p>Bajar <code>/sitemaps_inmuebles.php</code> via FTP, confirmar el nombre exacto del campo de fecha en la respuesta de la API con Víctor (IAGestión), añadir las 3 líneas del bloque <code>if</code> y volver a subir. Verificar con <code>curl https://www.agencialaplaya.com/sitemaps_inmuebles.php | grep lastmod</code>.</p>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="task" id="t-nap">
+    <div class="task-head">
+      <span class="sev p0">Alta</span>
+      <span class="num">T8</span>
+      <h3>parametros_configuracion.php — unificar teléfono NAP</h3>
+    </div>
+    <div class="task-body">
+      <div class="cta-issue">
+        <div class="cta-label">Estado actual</div>
+        <p>El archivo <code>/Plantillas/parametros_configuracion.php</code> define dos variables de teléfono: <code>telefono1 = "692 27 27 27"</code> (home/footer) y <code>telefono2 = "984 19 90 49"</code> (sección de agentes). Google y los directorios locales leen dos números distintos para el mismo negocio, lo que genera ambigüedad de identidad.</p>
+        <p>Pendiente confirmar con César si el 984 sigue activo. Si no lo es, basta con eliminar o igualar <code>telefono2</code> al 692.</p>
+      </div>
+      <h4>Cambio en parametros_configuracion.php</h4>
+<pre><code><span class="c-comment">// Antes:</span>
+$configuracion[<span class="c-str">'telefono2'</span>] = <span class="c-str">"984 19 90 49"</span>;
+
+<span class="c-comment">// Después (si el 984 ya no está operativo):</span>
+$configuracion[<span class="c-str">'telefono2'</span>] = <span class="c-str">"692 27 27 27"</span>;</code></pre>
+      <div class="cta-do">
+        <div class="cta-label">Acción</div>
+        <p>Confirmar con César el número canónico → editar <code>/Plantillas/parametros_configuracion.php</code> via FTP → verificar que la sección de agentes muestra el número correcto. Actualizar también el schema Organization con el teléfono unificado.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- S-05: CÓDIGOS CMS -->
+<section id="s-05">
+  <h2><span class="num">05</span> Mejoras via panel Códigos del CMS</h2>
+
+  <p>El CMS Déjà Vu (IAGestión) expone un editor PHP en la sección <strong>Códigos</strong> del panel de administración. Desde ahí podemos editar directamente los archivos de plantilla <code>inmueble_detalle.php</code>, <code>barrios.php</code>, <code>listado_inmuebles_comprar.php</code>, <code>index_final.php</code> y otros. Esto nos permite añadir schemas JSON-LD, canonicals y actualizar dependencias sin esperar a IAGestión.</p>
+
+  <div class="alert warn">
+    <p><strong>Nota de seguridad:</strong> antes de editar cualquier archivo via Códigos, hacemos una copia del contenido original en local. Los cambios son aditivos (añadimos bloques <code>&lt;script&gt;</code> y etiquetas al <code>&lt;head&gt;</code>) y no tocan la lógica existente.</p>
+  </div>
+
+
+  <div class="task" id="t-schema-global">
+    <div class="task-head">
+      <span class="sev p0">Alta</span>
+      <span class="num">T7a</span>
+      <h3>Schema global — Organization + RealEstateAgent + WebSite</h3>
+    </div>
+    <div class="task-body">
+      <p>Va en el <code>&lt;head&gt;</code> global del sitio. Una sola vez. Le dice a Google (y a los LLMs) exactamente qué es el sitio, dónde está y qué hace.</p>
+
+<pre><code><span class="c-tag">&lt;script</span> <span class="c-attr">type</span>=<span class="c-str">"application/ld+json"</span><span class="c-tag">&gt;</span>
+{
+  <span class="c-key">"@context"</span>: <span class="c-str">"https://schema.org"</span>,
+  <span class="c-key">"@graph"</span>: [
+    {
+      <span class="c-key">"@type"</span>: <span class="c-str">"RealEstateAgent"</span>,
+      <span class="c-key">"@id"</span>: <span class="c-str">"https://www.agencialaplaya.com/#organization"</span>,
+      <span class="c-key">"name"</span>: <span class="c-str">"Inmobiliaria Agencia La Playa"</span>,
+      <span class="c-key">"alternateName"</span>: <span class="c-str">"Agencia La Playa"</span>,
+      <span class="c-key">"url"</span>: <span class="c-str">"https://www.agencialaplaya.com"</span>,
+      <span class="c-key">"logo"</span>: <span class="c-str">"https://www.agencialaplaya.com/Plantillas/Imagenes/playalogocompartir.png"</span>,
+      <span class="c-key">"telephone"</span>: <span class="c-str">"+34 692 27 27 27"</span>,
+      <span class="c-key">"email"</span>: <span class="c-str">"info@agencialaplaya.com"</span>,
+      <span class="c-key">"priceRange"</span>: <span class="c-str">"€€"</span>,
+      <span class="c-key">"address"</span>: {
+        <span class="c-key">"@type"</span>: <span class="c-str">"PostalAddress"</span>,
+        <span class="c-key">"streetAddress"</span>: <span class="c-str">"Avenida Pablo Iglesias, 68"</span>,
+        <span class="c-key">"addressLocality"</span>: <span class="c-str">"Gijón"</span>,
+        <span class="c-key">"addressRegion"</span>: <span class="c-str">"Asturias"</span>,
+        <span class="c-key">"postalCode"</span>: <span class="c-str">"33204"</span>,
+        <span class="c-key">"addressCountry"</span>: <span class="c-str">"ES"</span>
+      },
+      <span class="c-key">"geo"</span>: {<span class="c-key">"@type"</span>: <span class="c-str">"GeoCoordinates"</span>, <span class="c-key">"latitude"</span>: <span class="c-num">43.5294</span>, <span class="c-key">"longitude"</span>: <span class="c-num">-5.6611</span>},
+      <span class="c-key">"areaServed"</span>: [
+        {<span class="c-key">"@type"</span>: <span class="c-str">"City"</span>, <span class="c-key">"name"</span>: <span class="c-str">"Gijón"</span>},
+        {<span class="c-key">"@type"</span>: <span class="c-str">"City"</span>, <span class="c-key">"name"</span>: <span class="c-str">"Oviedo"</span>},
+        {<span class="c-key">"@type"</span>: <span class="c-str">"AdministrativeArea"</span>, <span class="c-key">"name"</span>: <span class="c-str">"Asturias"</span>}
+      ],
+      <span class="c-key">"openingHoursSpecification"</span>: [{
+        <span class="c-key">"@type"</span>: <span class="c-str">"OpeningHoursSpecification"</span>,
+        <span class="c-key">"dayOfWeek"</span>: [<span class="c-str">"Monday"</span>,<span class="c-str">"Tuesday"</span>,<span class="c-str">"Wednesday"</span>,<span class="c-str">"Thursday"</span>,<span class="c-str">"Friday"</span>],
+        <span class="c-key">"opens"</span>: <span class="c-str">"09:30"</span>, <span class="c-key">"closes"</span>: <span class="c-str">"20:00"</span>
+      }],
+      <span class="c-key">"sameAs"</span>: [
+        <span class="c-str">"https://www.instagram.com/agencialaplaya"</span>,
+        <span class="c-str">"https://www.facebook.com/agencialaplaya"</span>,
+        <span class="c-str">"https://www.linkedin.com/company/agencia-la-playa"</span>,
+        <span class="c-str">"https://www.youtube.com/@agencialaplaya"</span>
+      ],
+      <span class="c-key">"aggregateRating"</span>: {
+        <span class="c-key">"@type"</span>: <span class="c-str">"AggregateRating"</span>,
+        <span class="c-key">"ratingValue"</span>: <span class="c-str">"4.9"</span>, <span class="c-key">"reviewCount"</span>: <span class="c-str">"1738"</span>,
+        <span class="c-key">"bestRating"</span>: <span class="c-str">"5"</span>, <span class="c-key">"worstRating"</span>: <span class="c-str">"1"</span>
+      },
+      <span class="c-key">"award"</span>: <span class="c-str">"Premio Fotocasa PRO 2024 a mejor RSC"</span>
+    },
+    {
+      <span class="c-key">"@type"</span>: <span class="c-str">"WebSite"</span>,
+      <span class="c-key">"@id"</span>: <span class="c-str">"https://www.agencialaplaya.com/#website"</span>,
+      <span class="c-key">"url"</span>: <span class="c-str">"https://www.agencialaplaya.com"</span>,
+      <span class="c-key">"name"</span>: <span class="c-str">"Agencia La Playa"</span>,
+      <span class="c-key">"publisher"</span>: {<span class="c-key">"@id"</span>: <span class="c-str">"https://www.agencialaplaya.com/#organization"</span>},
+      <span class="c-key">"inLanguage"</span>: <span class="c-str">"es-ES"</span>
+    }
+  ]
+}
+<span class="c-tag">&lt;/script&gt;</span></code></pre>
+
+      <div class="cta-do">
+        <div class="cta-label">Acción</div>
+        <p>Añadir al archivo de cabecera global del CMS (probablemente <code>index_final.php</code> o el template de <code>&lt;head&gt;</code>). <strong>Pendiente confirmar con César:</strong> las URLs reales de redes sociales y el año de fundación.</p>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="task" id="t-schema-ficha">
+    <div class="task-head">
+      <span class="sev p0">Alta</span>
+      <span class="num">T7b</span>
+      <h3>Schema por ficha de inmueble — RealEstateListing</h3>
+    </div>
+    <div class="task-body">
+      <p>Va en el <code>&lt;head&gt;</code> de cada ficha de inmueble. Los <code>{{placeholders}}</code> los rellenamos desde las variables PHP disponibles en <code>inmueble_detalle.php</code>.</p>
+
+<pre><code><span class="c-tag">&lt;script</span> <span class="c-attr">type</span>=<span class="c-str">"application/ld+json"</span><span class="c-tag">&gt;</span>
+{
+  <span class="c-key">"@context"</span>: <span class="c-str">"https://schema.org"</span>,
+  <span class="c-key">"@type"</span>: <span class="c-str">"RealEstateListing"</span>,
+  <span class="c-key">"@id"</span>: <span class="c-str">"https://www.agencialaplaya.com/inmueble/{{slug}}-{{id}}#listing"</span>,
+  <span class="c-key">"url"</span>: <span class="c-str">"https://www.agencialaplaya.com/inmueble/{{slug}}-{{id}}"</span>,
+  <span class="c-key">"name"</span>: <span class="c-str">"{{tipo}} en {{operacion}} en {{barrio}}, {{ciudad}}"</span>,
+  <span class="c-key">"description"</span>: <span class="c-str">"{{descripcion_corta}}"</span>,
+  <span class="c-key">"image"</span>: [<span class="c-str">"{{url_foto_principal}}"</span>, <span class="c-str">"{{url_foto_2}}"</span>],
+  <span class="c-key">"datePosted"</span>: <span class="c-str">"{{fecha_alta_ISO8601}}"</span>,
+  <span class="c-key">"offers"</span>: {
+    <span class="c-key">"@type"</span>: <span class="c-str">"Offer"</span>,
+    <span class="c-key">"price"</span>: {{precio_numerico}},
+    <span class="c-key">"priceCurrency"</span>: <span class="c-str">"EUR"</span>,
+    <span class="c-key">"availability"</span>: <span class="c-str">"https://schema.org/InStock"</span>
+  },
+  <span class="c-key">"address"</span>: {
+    <span class="c-key">"@type"</span>: <span class="c-str">"PostalAddress"</span>,
+    <span class="c-key">"addressLocality"</span>: <span class="c-str">"{{ciudad}}"</span>,
+    <span class="c-key">"addressRegion"</span>: <span class="c-str">"{{provincia}}"</span>,
+    <span class="c-key">"addressCountry"</span>: <span class="c-str">"ES"</span>
+  },
+  <span class="c-key">"numberOfRooms"</span>: {{habitaciones}},
+  <span class="c-key">"numberOfBathroomsTotal"</span>: {{banos}},
+  <span class="c-key">"floorSize"</span>: {<span class="c-key">"@type"</span>: <span class="c-str">"QuantitativeValue"</span>, <span class="c-key">"value"</span>: {{m2_construidos}}, <span class="c-key">"unitCode"</span>: <span class="c-str">"MTK"</span>},
+  <span class="c-key">"broker"</span>: {<span class="c-key">"@id"</span>: <span class="c-str">"https://www.agencialaplaya.com/#organization"</span>}
+}
+<span class="c-tag">&lt;/script&gt;</span></code></pre>
+
+      <div class="cta-do">
+        <div class="cta-label">Acción</div>
+        <p>Editar <code>inmueble_detalle.php</code> via el panel Códigos. El primer paso es abrir el archivo para identificar los nombres exactos de las variables PHP disponibles (precio, habitaciones, m², etc.) y mapearlos a los placeholders. Los números van sin comillas en el JSON.</p>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="task" id="t-schema-breadcrumb">
+    <div class="task-head">
+      <span class="sev p1">Media</span>
+      <span class="num">T7c</span>
+      <h3>BreadcrumbList e ItemList</h3>
+    </div>
+    <div class="task-body">
+      <p><strong>BreadcrumbList</strong> va en fichas de inmueble (ejemplo para una ficha en La Arena):</p>
+<pre><code>{
+  <span class="c-key">"@type"</span>: <span class="c-str">"BreadcrumbList"</span>,
+  <span class="c-key">"itemListElement"</span>: [
+    {<span class="c-key">"@type"</span>: <span class="c-str">"ListItem"</span>, <span class="c-key">"position"</span>: <span class="c-num">1</span>, <span class="c-key">"name"</span>: <span class="c-str">"Inicio"</span>, <span class="c-key">"item"</span>: <span class="c-str">"https://www.agencialaplaya.com/"</span>},
+    {<span class="c-key">"@type"</span>: <span class="c-str">"ListItem"</span>, <span class="c-key">"position"</span>: <span class="c-num">2</span>, <span class="c-key">"name"</span>: <span class="c-str">"Comprar"</span>, <span class="c-key">"item"</span>: <span class="c-str">"https://www.agencialaplaya.com/comprar-casa"</span>},
+    {<span class="c-key">"@type"</span>: <span class="c-str">"ListItem"</span>, <span class="c-key">"position"</span>: <span class="c-num">3</span>, <span class="c-key">"name"</span>: <span class="c-str">"{{barrio}}"</span>, <span class="c-key">"item"</span>: <span class="c-str">"https://www.agencialaplaya.com/pisos-venta-gijon-{{barrio_slug}}/"</span>},
+    {<span class="c-key">"@type"</span>: <span class="c-str">"ListItem"</span>, <span class="c-key">"position"</span>: <span class="c-num">4</span>, <span class="c-key">"name"</span>: <span class="c-str">"REF {{id}}"</span>}
+  ]
+}</code></pre>
+
+      <p><strong>ItemList</strong> va en landings de categoría (<code>/pisos-venta-gijon-la-arena/</code>) listando los inmuebles visibles en la página.</p>
+
+      <div class="cta-do">
+        <div class="cta-label">Acción</div>
+        <p>Añadir a <code>inmueble_detalle.php</code> (BreadcrumbList) y a la plantilla de listado por barrio (ItemList) via panel Códigos.</p>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="task" id="t-canonical">
+    <div class="task-head">
+      <span class="sev crit">Crítico</span>
+      <span class="num">T3</span>
+      <h3>Canonical correcto en categorías y fichas</h3>
+    </div>
+    <div class="task-body">
+      <div class="cta-issue">
+        <div class="cta-label">Estado actual</div>
+        <p>Las categorías tienen canonical apuntando a la home → Google las trata como duplicados de portada. Las fichas no tienen canonical.</p>
+      </div>
+
+      <p><strong>Fichas:</strong></p>
+<pre><code><span class="c-tag">&lt;link</span> <span class="c-attr">rel</span>=<span class="c-str">"canonical"</span> <span class="c-attr">href</span>=<span class="c-str">"https://www.agencialaplaya.com/inmueble/{{slug}}-{{id}}"</span><span class="c-tag">&gt;</span></code></pre>
+
+      <p><strong>Categorías y barrios:</strong></p>
+<pre><code><span class="c-tag">&lt;link</span> <span class="c-attr">rel</span>=<span class="c-str">"canonical"</span> <span class="c-attr">href</span>=<span class="c-str">"https://www.agencialaplaya.com/pisos-venta-gijon-{{barrio_slug}}/"</span><span class="c-tag">&gt;</span></code></pre>
+
+      <div class="cta-do">
+        <div class="cta-label">Acción</div>
+        <p>Una línea en el <code>&lt;head&gt;</code> de cada plantilla PHP (fichas, barrios, listados). Editar via panel Códigos en <code>inmueble_detalle.php</code> y <code>barrios.php</code>.</p>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="task" id="t-titles">
+    <div class="task-head">
+      <span class="sev p0">Alta</span>
+      <span class="num">T6</span>
+      <h3>Templates de title y meta description</h3>
+    </div>
+    <div class="task-body">
+      <div class="cta-issue">
+        <div class="cta-label">Estado actual</div>
+        <ul>
+          <li>Fichas con title en mayúsculas genérico: <code>VENTA VIVIENDA 4 DORMITORIOS, LLANO, GIJON 285.000 €</code></li>
+          <li>Fichas sin <code>&lt;meta name="description"&gt;</code></li>
+          <li>26 landings de barrio con title corporativo idéntico: "Mucho más que una inmobiliaria"</li>
+        </ul>
+      </div>
+
+      <h4>Template para fichas de inmueble</h4>
+<pre><code><span class="c-key">Title:</span>  {tipo} en {operacion} en {barrio}, {ciudad} · {m2}m², {hab} hab · Agencia La Playa
+
+<span class="c-comment">Ejemplo: Piso en venta en Natahoyo, Gijón · 90m², 2 hab · Agencia La Playa</span>
+
+<span class="c-key">Meta description:</span>
+{tipo} en {operacion} en {barrio}. {hab} dormitorios, {m2}m² construidos,
+{planta} planta{ascensor}. {extracto_70_chars}. Visítalo con Agencia La Playa.
+
+<span class="c-comment">Ejemplo: Piso en venta en Natahoyo, Gijón. 2 dormitorios, 90m² construidos,
+3ª planta con ascensor. Reformado y listo para entrar a vivir. Visítalo con Agencia La Playa.</span></code></pre>
+
+      <h4>Template para landings de barrio</h4>
+<pre><code><span class="c-key">Title:</span>  Pisos en venta en {Barrio}, Gijón | Agencia La Playa
+
+<span class="c-key">Meta description:</span>
+Descubre {N} pisos en venta en {barrio}, Gijón. Precio medio {precio_medio}€/m².
+Selección actualizada de Agencia La Playa, la inmobiliaria más recomendada de Gijón.</code></pre>
+
+      <div class="cta-do">
+        <div class="cta-label">Acción</div>
+        <p>Editar las plantillas PHP via panel Códigos (<code>inmueble_detalle.php</code>, <code>barrios.php</code>) para generar los tags <code>&lt;title&gt;</code> y <code>&lt;meta name="description"&gt;</code> dinámicamente desde los campos del CRM.</p>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="task" id="t-leaflet">
+    <div class="task-head">
+      <span class="sev p1">Media</span>
+      <span class="num">T12 + T13</span>
+      <h3>Leaflet 1.0.3 → 1.9.4 · Eliminar slick.js duplicado</h3>
+    </div>
+    <div class="task-body">
+      <p><strong>Leaflet</strong> — reemplazar dos líneas en el template de cabecera:</p>
+<pre><code><span class="c-comment">// Eliminar esto:</span>
+<span class="c-tag">&lt;link</span> <span class="c-attr">rel</span>=<span class="c-str">"stylesheet"</span> <span class="c-attr">href</span>=<span class="c-str">"https://unpkg.com/leaflet@1.0.3/dist/leaflet.css"</span><span class="c-tag">&gt;</span>
+<span class="c-tag">&lt;script</span> <span class="c-attr">src</span>=<span class="c-str">"https://unpkg.com/leaflet@1.0.3/dist/leaflet-src.js"</span><span class="c-tag">&gt;&lt;/script&gt;</span>
+
+<span class="c-comment">// Poner esto:</span>
+<span class="c-tag">&lt;link</span> <span class="c-attr">rel</span>=<span class="c-str">"stylesheet"</span> <span class="c-attr">href</span>=<span class="c-str">"https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"</span><span class="c-tag">&gt;</span>
+<span class="c-tag">&lt;script</span> <span class="c-attr">src</span>=<span class="c-str">"https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"</span> <span class="c-attr">defer</span><span class="c-tag">&gt;&lt;/script&gt;</span></code></pre>
+
+      <p><strong>slick.js duplicado</strong> — localizar y eliminar el segundo <code>&lt;script&gt;</code> de carga de Slick en la home. Verificar que los carruseles siguen funcionando tras el cambio.</p>
+
+      <div class="cta-do">
+        <div class="cta-label">Acción</div>
+        <p>Ambos cambios via panel Códigos en el template de cabecera global. Verificar mapas y carruseles después de aplicar.</p>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="task" id="t-mapa">
+    <div class="task-head">
+      <span class="sev p1">Media</span>
+      <span class="num">—</span>
+      <h3>Mapa Google Maps en /contacto/</h3>
+    </div>
+    <div class="task-body">
+      <p>La página de contacto no tiene mapa embebido. Es una señal de proximidad que ayuda tanto a conversión como al SEO local.</p>
+<pre><code><span class="c-tag">&lt;iframe</span>
+  <span class="c-attr">src</span>=<span class="c-str">"https://www.google.com/maps/embed?pb=..."</span>
+  <span class="c-attr">width</span>=<span class="c-str">"100%"</span> <span class="c-attr">height</span>=<span class="c-str">"420"</span>
+  <span class="c-attr">style</span>=<span class="c-str">"border:0;"</span>
+  <span class="c-attr">allowfullscreen</span> <span class="c-attr">loading</span>=<span class="c-str">"lazy"</span>
+  <span class="c-attr">referrerpolicy</span>=<span class="c-str">"no-referrer-when-downgrade"</span><span class="c-tag">&gt;&lt;/iframe&gt;</span></code></pre>
+      <div class="cta-do">
+        <div class="cta-label">Acción</div>
+        <p>César genera el embed desde Google Business Profile (Compartir → Insertar en sitio web). Nosotros lo insertamos en la plantilla de <code>/contacto/</code> via panel Códigos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- S-06: EDITORIAL -->
+<section id="s-06">
+  <h2><span class="num">06</span> Mejoras editoriales</h2>
+  <p>Cambios de contenido que César puede revisar y aprobar. No requieren tocar código.</p>
+
+  <h3>Post La Suiza — módulo de captación</h3>
+  <p>El post sobre la Pastelería La Suiza genera 1.572 clics mensuales con 11.5% de CTR. El visitante es local gijonés, exactamente el perfil de cliente potencial. Añadir al final del post un módulo de captación simple:</p>
+  <div class="intro-block">
+    <p><em>Ejemplo de texto:</em> "¿Buscas piso en Gijón? En este momento tenemos X propiedades disponibles en distintos barrios de la ciudad. [Ver propiedades en venta]"</p>
+    <p>Con un CTR del módulo del 5%, son 78 usuarios adicionales al mes llegando al listado de propiedades activas.</p>
+  </div>
+
+  <h3>Cluster fiscal — FAQs y CTAs</h3>
+  <p>Los 7 posts del cluster fiscal acumulan ~150.000 impresiones anuales pero tienen CTR por debajo del 1.5%. Dos acciones de impacto rápido:</p>
+  <ul>
+    <li><strong>Reescribir los titles</strong> en formulación de pregunta con año: "¿Qué considera Hacienda vivienda habitual en 2026?"</li>
+    <li><strong>Añadir CTA al final</strong> de cada artículo enlazando a /contacto o /comprar-casa: "¿Vas a comprar o vender en Gijón? Pídenos una valoración gratuita."</li>
+    <li><strong>Añadir sección FAQ</strong> con 3-5 preguntas frecuentes al final de los posts más visitados. Cuando tengamos las preguntas, añadimos el schema <code>FAQPage</code> via Códigos.</li>
+  </ul>
+
+  <h3>Landings de barrio — texto editorial</h3>
+  <p>Las 26 landings de barrio tienen el mismo H1 genérico y cero contenido único. Un bloque de 250-300 palabras por barrio (perfil del comprador, precio medio €/m², qué tiene de especial la zona) las convertiría en páginas indexables por sí mismas. El contenido lo redactamos nosotros barrio por barrio.</p>
+  <div class="cta-fix">
+    <div class="cta-label">Condición previa</div>
+    <p>Necesitamos confirmar con IAGestión si el CMS permite añadir contenido HTML independiente por cada landing de barrio, o si están generadas completamente desde IAGestión sin campo editable.</p>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     PARTE III — NECESITA SEMILLA
+══════════════════════════════════════════════════════════════ -->
+
+<div class="part-sep">
+  <div class="part-label">Parte III</div>
+  <h2>Lo que necesita IAGestión</h2>
+  <p>Cambios que requieren acceso al servidor o modificaciones en lógica que no debemos tocar sin su acompañamiento. Tras el acceso FTP esta lista se ha reducido a 6 ítems — los que sí quedan aquí son los que genuinamente no podemos resolver nosotros.</p>
+</div>
+
+
+<section id="s-07">
+  <h2><span class="num">07</span> Requerimientos para IAGestión</h2>
+
+  <div class="alert warn">
+    <p><strong>Contexto para IAGestión:</strong> estamos realizando una consultoría SEO para Agencia La Playa. A continuación detallamos los cambios técnicos necesarios ordenados por impacto. Tenemos acceso al panel de administración (Déjà Vu) y a FTP — nos encargamos de lo que podemos aplicar directamente. Lo que listamos aquí requiere vuestra intervención en el servidor o en lógica que no deberíamos tocar sin vuestro acompañamiento.</p>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 5%;">#</th>
+        <th style="width: 44%;">Requerimiento</th>
+        <th style="width: 12%;">Prioridad</th>
+        <th>Detalle</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="p-critical">
+        <td><span class="td-mono">S1</span></td>
+        <td><strong>Soft 404 → 410/404</strong> en fichas de inmueble inexistentes o vendidas</td>
+        <td><span class="pill pill-crit">Crítico</span></td>
+        <td>Actualmente cualquier URL <code>/inmueble/{slug}-{id}</code> que no exista redirige con 301 a la home. Lo correcto: ID activo → 200, ID vendido/reservado → 410 Gone con página "vivienda no disponible", ID inexistente → 404 limpio.</td>
+      </tr>
+      <tr class="p-high">
+        <td><span class="td-mono">S2</span></td>
+        <td><strong>Contenido editorial por landing de barrio</strong></td>
+        <td><span class="pill pill-high">Alta</span></td>
+        <td>Las 26 landings de barrio tienen el mismo H1 y cero contenido único. Necesitamos que el CMS permita añadir un bloque HTML editable independiente por cada landing. El contenido lo redactamos nosotros.</td>
+      </tr>
+      <tr>
+        <td><span class="td-mono">S3</span></td>
+        <td><strong>Optimización de imágenes</strong></td>
+        <td><span class="pill pill-med">Media</span></td>
+        <td>Imágenes servidas como JPG/PNG sin WebP, sin <code>srcset</code>, sin <code>loading="lazy"</code>, con atributos alt genéricos ("Logo", "modal image"). Requiere cambios en CDN y en las plantillas de imagen.</td>
+      </tr>
+      <tr>
+        <td><span class="td-mono">S4</span></td>
+        <td><strong>Security headers</strong> en nginx/Plesk</td>
+        <td><span class="pill pill-low">Baja</span></td>
+        <td>Ausentes: HSTS, X-Content-Type-Options, X-Frame-Options, Referrer-Policy, Permissions-Policy. También se recomienda eliminar los headers <code>X-Powered-By: PHP/8.2.31</code> y <code>X-Powered-By: PleskLin</code> que exponen información del servidor.</td>
+      </tr>
+      <tr>
+        <td><span class="td-mono">S5</span></td>
+        <td><strong>IndexNow — ping automático</strong> al publicar/modificar inmueble</td>
+        <td><span class="pill pill-low">Baja</span></td>
+        <td>Integrar una llamada a <code>api.indexnow.org</code> cada vez que un inmueble se publica o actualiza en IAGestión. Esto notifica a Bing/Yandex en minutos. Si no es viable desde el CRM, lo resolvemos con un cron externo como alternativa.</td>
+      </tr>
+      <tr>
+        <td><span class="td-mono">S6</span></td>
+        <td><strong>URLs CamelCase</strong> en enlaces internos</td>
+        <td><span class="pill pill-low">Baja</span></td>
+        <td>La home genera enlaces con CamelCase (<code>/inmueble/Pisos-Venta-gijon-la-arena-2239218</code>) que hacen 301 a la versión lowercase. Corregir el helper que construye las URLs para que genere siempre lowercase.</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     TABLA DE PRIORIDADES
+══════════════════════════════════════════════════════════════ -->
+
+<section id="s-prioridades">
+  <h2><span class="num">—</span> Tabla de prioridades combinada</h2>
+  <p>Vista consolidada de todas las acciones, ordenadas por impacto. <span class="pill pill-nos">Nosotros</span> = ejecutable con FTP + Códigos. <span class="pill pill-sem">IAGestión</span> = requiere coordinación con IAGestión.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 11%;">Prioridad</th>
+        <th style="width: 45%;">Acción</th>
+        <th style="width: 11%;">Quién</th>
+        <th>Impacto estimado</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="p-critical">
+        <td><span class="pill pill-crit">Crítico</span></td>
+        <td>Resolver duplicado HTTP/HTTPS — redirect 301 via .htaccess</td>
+        <td><span class="pill pill-nos">Nosotros</span></td>
+        <td>Recuperar posiciones en múltiples clusters simultáneamente</td>
+      </tr>
+      <tr class="p-critical">
+        <td><span class="pill pill-crit">Crítico</span></td>
+        <td>Soft 404 → 410 en fichas de inmuebles vendidos/inexistentes</td>
+        <td><span class="pill pill-sem">IAGestión</span></td>
+        <td>Eliminar basura del índice de Google, recuperar autoridad</td>
+      </tr>
+      <tr class="p-critical">
+        <td><span class="pill pill-crit">Crítico</span></td>
+        <td>Unificar teléfono canónico NAP (692) en todas las plantillas</td>
+        <td><span class="pill pill-sem">IAGestión</span></td>
+        <td>Señal de identidad local clara para Google Maps y SEO local</td>
+      </tr>
+      <tr class="p-high">
+        <td><span class="pill pill-high">Alta</span></td>
+        <td>robots.txt corregido + Allow a bots de IA</td>
+        <td><span class="pill pill-nos">Nosotros</span></td>
+        <td>Visibilidad en ChatGPT, Perplexity, Copilot, AI Overviews</td>
+      </tr>
+      <tr class="p-high">
+        <td><span class="pill pill-high">Alta</span></td>
+        <td>sitemap.xml páginas estáticas (actualmente devuelve 404)</td>
+        <td><span class="pill pill-nos">Nosotros</span></td>
+        <td>Google descubre y rastrea las páginas principales del sitio</td>
+      </tr>
+      <tr class="p-high">
+        <td><span class="pill pill-high">Alta</span></td>
+        <td>llms.txt en raíz del dominio</td>
+        <td><span class="pill pill-nos">Nosotros</span></td>
+        <td>Visibilidad e identidad clara en motores de IA generativa</td>
+      </tr>
+      <tr class="p-high">
+        <td><span class="pill pill-high">Alta</span></td>
+        <td>Bing Webmaster Tools — verificación del dominio</td>
+        <td><span class="pill pill-nos">Nosotros</span></td>
+        <td>Presencia en Bing/ChatGPT search; prerrequisito para IndexNow</td>
+      </tr>
+      <tr class="p-high">
+        <td><span class="pill pill-high">Alta</span></td>
+        <td>Schema Organization + RealEstateAgent global</td>
+        <td><span class="pill pill-nos">Nosotros</span></td>
+        <td>Knowledge Graph, rich snippets locales, citabilidad en LLMs</td>
+      </tr>
+      <tr class="p-high">
+        <td><span class="pill pill-high">Alta</span></td>
+        <td>Canonical correcto en fichas y categorías</td>
+        <td><span class="pill pill-nos">Nosotros</span></td>
+        <td>Consolida autoridad; evita que Google trate páginas como duplicados</td>
+      </tr>
+      <tr class="p-high">
+        <td><span class="pill pill-high">Alta</span></td>
+        <td>Reescribir titles y meta descriptions fichas + barrios</td>
+        <td><span class="pill pill-nos">Nosotros</span></td>
+        <td>+1-3pp de CTR en fichas = +500-2.000 clics/mes estimados</td>
+      </tr>
+      <tr class="p-high">
+        <td><span class="pill pill-high">Alta</span></td>
+        <td>Optimizar /comprar-casa: title, meta, contenido intro, schema ItemList</td>
+        <td><span class="pill pill-nos">Nosotros</span></td>
+        <td>+3.000-8.000 clics/mes si sube 2-3 posiciones (208k impresiones)</td>
+      </tr>
+      <tr class="p-high">
+        <td><span class="pill pill-high">Alta</span></td>
+        <td>lastmod en sitemap dinámico de inmuebles (sitemaps_inmuebles.php)</td>
+        <td><span class="pill pill-nos">Nosotros</span></td>
+        <td>Google prioriza re-rastrear fichas actualizadas</td>
+      </tr>
+      <tr class="p-medium">
+        <td><span class="pill pill-med">Media</span></td>
+        <td>Schema RealEstateListing en fichas</td>
+        <td><span class="pill pill-nos">Nosotros</span></td>
+        <td>Rich snippets con precio y características en Google</td>
+      </tr>
+      <tr class="p-medium">
+        <td><span class="pill pill-med">Media</span></td>
+        <td>BreadcrumbList en fichas y categorías</td>
+        <td><span class="pill pill-nos">Nosotros</span></td>
+        <td>Mejora estructura visual del snippet en SERP</td>
+      </tr>
+      <tr class="p-medium">
+        <td><span class="pill pill-med">Media</span></td>
+        <td>Reforzar /nuda-propiedad con contenido + FAQ schema</td>
+        <td><span class="pill pill-nos">Nosotros</span></td>
+        <td>+100-300 clics/mes; 30k impresiones en frontera de pág. 1</td>
+      </tr>
+      <tr class="p-medium">
+        <td><span class="pill pill-med">Media</span></td>
+        <td>Cluster fiscal: reescribir titles + CTA + FAQ schema</td>
+        <td><span class="pill pill-nos">Nosotros</span></td>
+        <td>+CTR 0.5-1pp = +150-300 clics/mes + mayor visibilidad en AI</td>
+      </tr>
+      <tr class="p-medium">
+        <td><span class="pill pill-med">Media</span></td>
+        <td>Módulo de captación en post La Suiza → /comprar-casa</td>
+        <td><span class="pill pill-nos">Nosotros</span></td>
+        <td>~50-100 usuarios adicionales/mes al listado de propiedades</td>
+      </tr>
+      <tr class="p-medium">
+        <td><span class="pill pill-med">Media</span></td>
+        <td>Contenido editorial por landing de barrio (26 páginas)</td>
+        <td><span class="pill pill-sem">IAGestión</span> + <span class="pill pill-nos">Nos.</span></td>
+        <td>Páginas indexables por sí mismas; mejora CTR de barrios</td>
+      </tr>
+      <tr class="p-medium">
+        <td><span class="pill pill-med">Media</span></td>
+        <td>Leaflet 1.0.3 → 1.9.4 + eliminar slick.js duplicado</td>
+        <td><span class="pill pill-nos">Nosotros</span></td>
+        <td>Reducción de peso de página, mejora Core Web Vitals</td>
+      </tr>
+      <tr class="p-medium">
+        <td><span class="pill pill-med">Media</span></td>
+        <td>Google Maps embed en /contacto/</td>
+        <td><span class="pill pill-nos">Nosotros</span></td>
+        <td>Señal de proximidad, mejora conversión y SEO local</td>
+      </tr>
+      <tr>
+        <td><span class="pill pill-low">Baja</span></td>
+        <td>Encoding mojibake en sitemap (16 imágenes) — <em>posiblemente ya resuelto en versión actual del PHP</em></td>
+        <td><span class="pill pill-nos">Nosotros</span></td>
+        <td>Verificar con curl; si persiste, corregir en sitemaps_inmuebles.php via FTP</td>
+      </tr>
+      <tr>
+        <td><span class="pill pill-low">Baja</span></td>
+        <td>Security headers en nginx</td>
+        <td><span class="pill pill-sem">IAGestión</span></td>
+        <td>Seguridad y señal de confianza</td>
+      </tr>
+      <tr>
+        <td><span class="pill pill-low">Baja</span></td>
+        <td>Optimización de imágenes (WebP, srcset, lazy load, alt)</td>
+        <td><span class="pill pill-sem">IAGestión</span></td>
+        <td>Core Web Vitals, experiencia móvil</td>
+      </tr>
+      <tr>
+        <td><span class="pill pill-low">Baja</span></td>
+        <td>IndexNow — integración automática con IAGestión</td>
+        <td><span class="pill pill-sem">IAGestión</span></td>
+        <td>Indexación en Bing en minutos al publicar inmueble</td>
+      </tr>
+      <tr>
+        <td><span class="pill pill-low">Baja</span></td>
+        <td>URLs CamelCase → lowercase en generación de enlaces</td>
+        <td><span class="pill pill-sem">IAGestión</span></td>
+        <td>Eliminar cadenas de 301 innecesarias</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+
+<!-- CIERRE -->
+<section id="cierre">
+  <div class="closing">
+    <h3>Próximos pasos</h3>
+    <p>Las acciones de la <strong>Parte II</strong> las empezamos a ejecutar en cuanto tengamos luz verde. Son cambios directos sin dependencias externas: los archivos FTP los subimos de inmediato, y las modificaciones de plantilla las hacemos con copia de seguridad previa.</p>
+    <p>Para la <strong>Parte III</strong>, la tabla de requerimientos está lista para enviársela al equipo de IAGestión con todas las especificaciones técnicas. Si lo prefieres, gestionamos esa coordinación directamente.</p>
+    <p>A medida que avancemos haremos seguimiento en Search Console para medir el impacto de cada bloque de cambios. El objetivo es tener las acciones críticas aplicadas antes de finalizar julio.</p>
+    <div class="sig">
+      <strong>Diego Fresno</strong>
+      Consultor SEO independiente · diegofresno.com · junio 2026
+    </div>
+  </div>
+</section>
+
+<footer class="doc">
+  <div>Auditoría SEO Mes 1 · <strong style="color: var(--ink);">agencialaplaya.com</strong></div>
+  <div>Preparado por Diego Fresno · 25.06.2026 · Confidencial</div>
+</footer>
+
+</main>
+</div>
+
+</body>
+</html>

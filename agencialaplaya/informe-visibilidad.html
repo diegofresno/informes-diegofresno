@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Informe de Visibilidad SEO — Agencia La Playa · Julio 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cyan:    #0080a8;
+    --cyan-bg: #e8f5fa;
+    --teal:    #08876e;
+    --teal-bg: #e6f4f1;
+    --bg:      #fafcff;
+    --text:    #0f1c2e;
+    --muted:   #5a6a7e;
+    --border:  #dde4ee;
+    --white:   #ffffff;
+    --p0:      #dc2626;
+    --p0-bg:   #fef2f2;
+    --p1:      #d97706;
+    --p1-bg:   #fffbeb;
+    --p2:      #2563eb;
+    --p2-bg:   #eff6ff;
+    --p3:      #16a34a;
+    --p3-bg:   #f0fdf4;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { font-size: 16px; scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.65;
+  }
+
+  /* ── Layout ── */
+  .layout { display: flex; min-height: 100vh; }
+
+  aside.toc {
+    width: 240px;
+    min-width: 240px;
+    background: var(--white);
+    border-right: 1px solid var(--border);
+    padding: 32px 20px;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+  }
+
+  aside.toc .toc-logo { margin-bottom: 24px; }
+
+  aside.toc h2 {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 10px;
+  }
+
+  aside.toc ol {
+    list-style: none;
+    counter-reset: toc;
+    padding: 0;
+    font-size: 12px;
+  }
+
+  aside.toc ol li { margin-bottom: 4px; }
+
+  aside.toc ol li a {
+    color: var(--text);
+    text-decoration: none;
+    display: block;
+    padding: 4px 8px;
+    border-radius: 5px;
+    transition: background .15s;
+  }
+
+  aside.toc ol li a:hover { background: var(--cyan-bg); color: var(--cyan); }
+
+  aside.toc ol li ul {
+    list-style: none;
+    padding-left: 10px;
+    margin-top: 4px;
+  }
+
+  aside.toc ol li ul li a {
+    font-size: 11px;
+    color: var(--muted);
+    padding: 2px 8px;
+  }
+
+  main.content {
+    flex: 1;
+    padding: 48px 64px;
+    max-width: 960px;
+  }
+
+  /* ── Hero ── */
+  .hero {
+    background: linear-gradient(135deg, var(--cyan) 0%, var(--teal) 100%);
+    color: white;
+    border-radius: 16px;
+    padding: 48px 52px;
+    margin-bottom: 52px;
+  }
+
+  .hero-eyebrow {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    opacity: 0.8;
+    margin-bottom: 12px;
+  }
+
+  .hero h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 32px;
+    font-weight: 900;
+    line-height: 1.15;
+    margin-bottom: 10px;
+  }
+
+  .hero-sub { opacity: 0.85; font-size: 15px; margin-bottom: 28px; }
+
+  .hero-meta {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    font-size: 12px;
+    opacity: 0.75;
+  }
+
+  .hero-meta span::before { content: "·  "; }
+  .hero-meta span:first-child::before { content: ""; }
+
+  /* ── Sections ── */
+  section {
+    margin-bottom: 60px;
+    padding-bottom: 60px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  section:last-of-type { border-bottom: none; }
+
+  h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  h2 .num {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--white);
+    background: var(--cyan);
+    border-radius: 6px;
+    padding: 2px 8px;
+    letter-spacing: 0.04em;
+  }
+
+  h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text);
+    margin: 28px 0 10px 0;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  p { margin-bottom: 14px; font-size: 14px; color: var(--text); }
+
+  p:last-child { margin-bottom: 0; }
+
+  ul, ol { padding-left: 20px; margin-bottom: 14px; font-size: 14px; }
+
+  li { margin-bottom: 6px; }
+
+  strong { font-weight: 600; }
+
+  code {
+    background: #f0f4f8;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 1px 6px;
+    font-size: 12px;
+    font-family: 'Courier New', monospace;
+  }
+
+  /* ── KPIs ── */
+  .kpis {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin: 20px 0 28px 0;
+  }
+
+  .kpi {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 20px;
+    min-width: 130px;
+    flex: 1;
+  }
+
+  .kpi-value {
+    font-family: 'Poppins', sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--cyan);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .kpi-label {
+    font-size: 11px;
+    color: var(--muted);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .kpi-delta {
+    font-size: 11px;
+    color: var(--p3);
+    font-weight: 600;
+    margin-top: 2px;
+  }
+
+  /* ── Tables ── */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    margin: 14px 0 22px 0;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+
+  th {
+    background: #f3f6fa;
+    font-weight: 700;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    padding: 10px 14px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+  }
+
+  td {
+    padding: 9px 14px;
+    border-bottom: 1px solid #edf0f5;
+    color: var(--text);
+    vertical-align: top;
+  }
+
+  tr:last-child td { border-bottom: none; }
+
+  tr:hover td { background: #fafbfd; }
+
+  .td-num { text-align: right; font-variant-numeric: tabular-nums; }
+
+  .td-pos1 { color: var(--teal); font-weight: 700; }
+  .td-pos10 { color: var(--cyan); font-weight: 600; }
+  .td-pos20 { color: var(--p1); }
+  .td-muted { color: var(--muted); }
+
+  tr.highlight td { background: #f0fdf4; }
+  tr.warn td { background: #fffbeb; }
+  tr.alert-row td { background: #fef2f2; }
+
+  /* ── Score bars ── */
+  .score-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 10px;
+    font-size: 13px;
+  }
+
+  .score-label { width: 160px; font-weight: 500; }
+
+  .score-bar-wrap {
+    flex: 1;
+    background: #edf0f5;
+    border-radius: 4px;
+    height: 8px;
+  }
+
+  .score-bar { height: 8px; border-radius: 4px; }
+  .score-bar.good    { background: var(--teal); }
+  .score-bar.med     { background: var(--p1); }
+  .score-bar.poor    { background: var(--p0); }
+
+  .score-val { width: 48px; text-align: right; font-weight: 700; color: var(--text); }
+
+  /* ── Alert boxes ── */
+  .alert { border-left: 3px solid var(--p0); background: var(--p0-bg); padding: 14px 18px; border-radius: 0 8px 8px 0; margin: 14px 0; }
+  .alert.warn { border-color: var(--p1); background: var(--p1-bg); }
+  .alert.info { border-color: var(--cyan); background: var(--cyan-bg); }
+  .alert.good { border-color: var(--p3); background: var(--p3-bg); }
+  .alert p { margin: 0 0 6px 0; font-size: 13px; }
+  .alert p:last-child { margin: 0; }
+
+  /* ── Insight blocks ── */
+  .insight {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--cyan);
+    border-radius: 0 8px 8px 0;
+    padding: 16px 20px;
+    margin: 16px 0;
+    font-size: 13px;
+  }
+
+  .insight strong { display: block; margin-bottom: 4px; font-size: 13px; }
+
+  /* ── Competitor chart (bubble visual) ── */
+  .competitor-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 14px 0;
+  }
+
+  .comp-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 14px;
+    font-size: 12px;
+  }
+
+  .comp-card .comp-name { font-weight: 700; font-size: 13px; margin-bottom: 4px; }
+  .comp-card .comp-stat { color: var(--muted); margin-bottom: 2px; }
+  .comp-card.local { border-color: var(--cyan); border-left-width: 3px; }
+  .comp-card.portal { border-color: var(--border); }
+
+  /* ── Closing ── */
+  .closing {
+    background: linear-gradient(135deg, var(--text) 0%, #1e3a5f 100%);
+    color: white;
+    border-radius: 16px;
+    padding: 40px 48px;
+    margin-top: 20px;
+  }
+
+  .closing h2 { color: white; font-family: 'Poppins', sans-serif; font-size: 22px; margin-bottom: 12px; }
+  .closing p { color: rgba(255,255,255,0.85); font-size: 14px; }
+
+  /* ── Print ── */
+  @media print {
+    aside.toc { display: none; }
+    .layout { display: block; }
+    main.content { padding: 28px 48px; max-width: none; }
+    h2, h3 { page-break-after: avoid; break-after: avoid; }
+    table { page-break-inside: avoid; break-inside: avoid; }
+    tr { page-break-inside: avoid; break-inside: avoid; }
+    .kpis { page-break-inside: avoid; break-inside: avoid; }
+    .alert, .insight { page-break-inside: avoid; break-inside: avoid; }
+    .closing { page-break-inside: avoid; break-inside: avoid; }
+    .competitor-grid { page-break-inside: avoid; break-inside: avoid; }
+    .score-row { page-break-inside: avoid; break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="layout">
+
+<!-- ── TOC ── -->
+<aside class="toc">
+  <div class="toc-logo">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3000 800" width="150" height="40" aria-label="diegofresno.com">
+      <text x="0" y="630" font-family="'Inter','Segoe UI',Arial,sans-serif" font-size="320" font-weight="900" fill="#0f1c2e" letter-spacing="-10">diegofresno<tspan fill="#0080a8">.com</tspan></text>
+    </svg>
+  </div>
+  <h2>Contenido</h2>
+  <ol>
+    <li><a href="#s-resumen">Resumen ejecutivo</a></li>
+    <li><a href="#s-trafico">Tráfico orgánico</a>
+      <ul>
+        <li><a href="#s-trafico-pais">Por país</a></li>
+        <li><a href="#s-trafico-paginas">Páginas principales</a></li>
+      </ul>
+    </li>
+    <li><a href="#s-keywords">Posicionamiento</a>
+      <ul>
+        <li><a href="#s-keywords-dist">Distribución posiciones</a></li>
+        <li><a href="#s-keywords-top">Top keywords</a></li>
+        <li><a href="#s-keywords-intent">Intención de búsqueda</a></li>
+        <li><a href="#s-keywords-serp">Funciones SERP</a></li>
+      </ul>
+    </li>
+    <li><a href="#s-competidores">Competidores</a></li>
+    <li><a href="#s-wpo">Rendimiento técnico</a></li>
+    <li><a href="#s-backlinks">Autoridad y backlinks</a></li>
+    <li><a href="#s-tecnico">Rastreo e indexación</a></li>
+    <li><a href="#s-conclusiones">Conclusiones</a></li>
+  </ol>
+</aside>
+
+<!-- ── Content ── -->
+<main class="content">
+
+<!-- Hero -->
+<div class="hero">
+  <div class="hero-eyebrow">Informe de Visibilidad SEO</div>
+  <h1>Agencia La Playa<br>agencialaplaya.com</h1>
+  <p class="hero-sub">Análisis completo del posicionamiento orgánico, autoridad, rendimiento técnico y entorno competitivo.</p>
+  <div class="hero-meta">
+    <span>Julio 2026</span>
+    <span>Google España</span>
+    <span>Preparado por diegofresno.com</span>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════ S-01: RESUMEN ════════════════════════════ -->
+<section id="s-resumen">
+  <h2><span class="num">01</span> Resumen ejecutivo</h2>
+
+  <div class="kpis">
+    <div class="kpi">
+      <div class="kpi-value">4.500</div>
+      <div class="kpi-label">Visitas orgánicas/mes</div>
+      <div class="kpi-delta">↑ +225 vs mes anterior</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-value">6.200</div>
+      <div class="kpi-label">Keywords posicionadas</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-value">36/100</div>
+      <div class="kpi-label">Domain Trust</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-value">167</div>
+      <div class="kpi-label">Dominios que enlazan</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-value">1.227 €</div>
+      <div class="kpi-label">Valor equiv. SEM/mes</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-value">0 €</div>
+      <div class="kpi-label">Inversión publicitaria</div>
+    </div>
+  </div>
+
+  <p>Agencia La Playa genera <strong>4.500 visitas mensuales de forma orgánica</strong>, sin inversión en publicidad. El tráfico equivale a lo que costarían unas campañas de Google Ads de aproximadamente 1.200 €/mes. La tendencia es positiva (+225 visitas en el último mes) y el dominio rankea en más de 6.200 términos de búsqueda en Google España.</p>
+
+  <p>El sitio tiene margen de mejora significativo: varios errores técnicos importantes limitan el potencial (redirect HTTPS no activo, canonicals incorrectos, sin schemas) y hay una concentración de tráfico alta en pocas páginas. Con las optimizaciones correctas, el tráfico orgánico tiene potencial de crecer un 30–50% en 6–12 meses sin generar nuevo contenido.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Área</th>
+        <th>Estado</th>
+        <th>Nota</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="warn"><td><strong>SEO técnico</strong></td><td>⚠ Mejorable</td><td>HTTPS sin redirect, canonicals incorrectos, sin schemas, sitemap roto</td></tr>
+      <tr class="warn"><td><strong>Rendimiento (WPO)</strong></td><td>⚠ Mejorable</td><td>Lighthouse Performance 69/100 · LCP 3.9s en escritorio</td></tr>
+      <tr class="warn"><td><strong>Posicionamiento</strong></td><td>⚠ Mejorable</td><td>89 keywords en top-10, pero 77 más en posiciones 11–20 pendientes de subir</td></tr>
+      <tr class="alert-row"><td><strong>Backlinks</strong></td><td>⛔ Riesgo</td><td>Spam score elevado (34/100), 66% de enlaces desde blogspot</td></tr>
+      <tr class="highlight"><td><strong>Contenido editorial</strong></td><td>✓ Bueno</td><td>Blog activo con tráfico local real (pastelería La Suiza, guías de barrios)</td></tr>
+      <tr class="highlight"><td><strong>Tráfico</strong></td><td>✓ Creciendo</td><td>Tendencia positiva · 98.5% tráfico desde España</td></tr>
+    </tbody>
+  </table>
+</section>
+
+
+<!-- ═══════════════════════════ S-02: TRÁFICO ════════════════════════════ -->
+<section id="s-trafico">
+  <h2><span class="num">02</span> Tráfico orgánico</h2>
+
+  <p>Datos correspondientes a julio 2026. El 100% del tráfico es orgánico — la agencia no tiene campañas de pago activas.</p>
+
+  <h3 id="s-trafico-pais">Distribución por país</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>País</th>
+        <th class="td-num">Cuota de tráfico</th>
+        <th class="td-num">Visitas/mes</th>
+        <th class="td-num">Keywords posicionadas</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="highlight"><td>🇪🇸 España</td><td class="td-num">98.55%</td><td class="td-num">4.433</td><td class="td-num">6.200</td></tr>
+      <tr><td>🇬🇧 Reino Unido</td><td class="td-num">0.90%</td><td class="td-num">41</td><td class="td-num">125</td></tr>
+      <tr><td>🇺🇸 EE.UU.</td><td class="td-num">0.15%</td><td class="td-num">7</td><td class="td-num">402</td></tr>
+      <tr><td>🇫🇷 Francia</td><td class="td-num">0.11%</td><td class="td-num">5</td><td class="td-num">23</td></tr>
+      <tr><td>🇮🇹 Italia</td><td class="td-num">0.07%</td><td class="td-num">3</td><td class="td-num">47</td></tr>
+    </tbody>
+  </table>
+
+  <div class="insight">
+    <strong>Perfil local muy concentrado</strong>
+    El 98.5% del tráfico procede de España. Es lo esperado para una inmobiliaria local de Gijón, pero el posicionamiento internacional (402 keywords en EE.UU., 125 en UK) sugiere que el blog genera visibilidad fuera de España — probablemente tráfico informacional de asturianos en el extranjero.
+  </div>
+
+  <h3 id="s-trafico-paginas">Páginas que generan más tráfico</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>URL</th>
+        <th class="td-num">Cuota de tráfico</th>
+        <th class="td-num">Visitas/mes</th>
+        <th>Tipo de página</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="highlight"><td><code>/comprar-casa</code></td><td class="td-num">33.65%</td><td class="td-num">1.514</td><td>Listado de propiedades en venta</td></tr>
+      <tr class="highlight"><td><code>/</code> (home)</td><td class="td-num">22.53%</td><td class="td-num">1.014</td><td>Página principal</td></tr>
+      <tr><td><code>/blog/pasteleria-la-suiza-en-gijon/</code></td><td class="td-num">~5%</td><td class="td-num">~225</td><td>Post blog — tráfico local informacional</td></tr>
+      <tr><td><code>/comprar-o-vender-nuda-propiedad</code></td><td class="td-num">~3%</td><td class="td-num">~135</td><td>Guía informacional</td></tr>
+      <tr><td><code>/nuevo-roces-gijon</code></td><td class="td-num">~2%</td><td class="td-num">~90</td><td>Landing barrio</td></tr>
+      <tr><td><code>/llano</code></td><td class="td-num">~2%</td><td class="td-num">~90</td><td>Landing barrio</td></tr>
+      <tr><td><code>/agentes</code></td><td class="td-num">~1.5%</td><td class="td-num">~68</td><td>Página de agentes (CTR anómalo)</td></tr>
+      <tr class="warn"><td><em>Resto de 790 páginas</em></td><td class="td-num">~30%</td><td class="td-num">~1.350</td><td>Distribuido entre 790+ URLs</td></tr>
+    </tbody>
+  </table>
+
+  <div class="alert warn">
+    <p><strong>Concentración de tráfico:</strong> las dos primeras páginas acumulan el 56% de todo el tráfico del sitio. Esta concentración es un riesgo: cualquier caída en la posición de <code>/comprar-casa</code> o la home tiene un impacto desproporcionado. Es recomendable diversificar la base de tráfico reforzando las landings de barrio (26 páginas con posicionamiento mejorable) y la guía de nuda propiedad.</p>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════ S-03: KEYWORDS ═══════════════════════════ -->
+<section id="s-keywords">
+  <h2><span class="num">03</span> Posicionamiento en Google</h2>
+
+  <h3 id="s-keywords-dist">Distribución de posiciones</h3>
+
+  <p>De los keywords monitorizados en Google España:</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Posición</th>
+        <th class="td-num">Keywords</th>
+        <th class="td-num">%</th>
+        <th>Impacto en tráfico</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="highlight"><td class="td-pos1"><strong>Posición 1</strong></td><td class="td-num">7</td><td class="td-num">2.3%</td><td>Tráfico máximo — keywords de marca y muy locales</td></tr>
+      <tr class="highlight"><td class="td-pos10"><strong>Posición 2–3</strong></td><td class="td-num">12</td><td class="td-num">4.0%</td><td>CTR elevado (15–30% según keyword)</td></tr>
+      <tr class="highlight"><td class="td-pos10"><strong>Posición 4–10</strong></td><td class="td-num">70</td><td class="td-num">23.2%</td><td>Primera página — genera la mayor parte del tráfico</td></tr>
+      <tr class="warn"><td class="td-pos20"><strong>Posición 11–20 ⚑</strong></td><td class="td-num">77</td><td class="td-num">25.5%</td><td>Segunda página — bolsa de oportunidades inmediata</td></tr>
+      <tr><td class="td-muted"><strong>Posición 21–30</strong></td><td class="td-num">54</td><td class="td-num">17.9%</td><td>Sin tráfico significativo</td></tr>
+      <tr><td class="td-muted"><strong>Posición 31–50</strong></td><td class="td-num">55</td><td class="td-num">18.2%</td><td>Sin tráfico</td></tr>
+      <tr><td class="td-muted"><strong>Posición 51–100</strong></td><td class="td-num">27</td><td class="td-num">8.9%</td><td>Señal débil</td></tr>
+    </tbody>
+  </table>
+
+  <div class="insight">
+    <strong>77 keywords en posiciones 11–20 = oportunidad de primera página</strong>
+    Estos keywords ya tienen una señal de relevancia establecida con Google (el sitio aparece, pero en la segunda página). Correcciones técnicas —especialmente HTTPS consolidado, canonicals correctos y schemas— suelen ser suficientes para empujar un porcentaje importante de este grupo a primera página, sin necesidad de nuevo contenido.
+  </div>
+
+  <h3 id="s-keywords-top">Top 20 keywords por volumen de búsqueda</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Keyword</th>
+        <th class="td-num">Vol. mensual</th>
+        <th class="td-num">Posición</th>
+        <th>URL que rankea</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="warn"><td>inmobiliarias</td><td class="td-num">110.000</td><td class="td-num">30</td><td><code>/</code></td></tr>
+      <tr class="warn"><td>nuda propiedad</td><td class="td-num">27.100</td><td class="td-num">11</td><td><code>/comprar-o-vender-nuda-propiedad</code></td></tr>
+      <tr class="highlight"><td>pisos en gijón venta</td><td class="td-num">14.800</td><td class="td-num">4</td><td><code>/comprar-casa</code></td></tr>
+      <tr class="highlight"><td>venta pisos gijon</td><td class="td-num">14.800</td><td class="td-num">4</td><td><code>/comprar-casa</code></td></tr>
+      <tr class="highlight"><td>pisos gijon</td><td class="td-num">6.600</td><td class="td-num">5</td><td><code>/comprar-casa</code></td></tr>
+      <tr class="warn"><td>el llano</td><td class="td-num">5.400</td><td class="td-num">11</td><td><code>/llano</code></td></tr>
+      <tr class="highlight"><td>nuevo roces</td><td class="td-num">3.600</td><td class="td-num">7</td><td><code>/nuevo-roces-gijon</code></td></tr>
+      <tr class="highlight"><td>casa en venta gijon</td><td class="td-num">2.900</td><td class="td-num">3</td><td><code>/comprar-casa</code></td></tr>
+      <tr class="highlight"><td>comprar piso en gijon</td><td class="td-num">2.900</td><td class="td-num">6</td><td><code>/comprar-casa</code></td></tr>
+      <tr class="highlight"><td>comprar piso gijon</td><td class="td-num">2.900</td><td class="td-num">7</td><td><code>/comprar-casa</code></td></tr>
+      <tr class="highlight"><td>venta casa gijon</td><td class="td-num">2.900</td><td class="td-num">7</td><td><code>/comprar-casa</code></td></tr>
+      <tr class="warn"><td>meson sancho gijon</td><td class="td-num">2.900</td><td class="td-num">13</td><td><code>/meson-restaurante-sancho</code></td></tr>
+      <tr class="highlight"><td>casa en gijon</td><td class="td-num">1.900</td><td class="td-num">2</td><td><code>/comprar-casa</code></td></tr>
+      <tr class="highlight"><td>inmobiliaria en gijón</td><td class="td-num">1.900</td><td class="td-num">3</td><td><code>/</code></td></tr>
+      <tr class="highlight"><td>inmobiliarias en gijon</td><td class="td-num">1.900</td><td class="td-num"><strong>1</strong></td><td><code>/</code></td></tr>
+      <tr class="highlight"><td>inmobiliarias gijon</td><td class="td-num">1.900</td><td class="td-num">3</td><td><code>/</code></td></tr>
+      <tr class="highlight"><td>inmobiliaria asturias</td><td class="td-num">1.900</td><td class="td-num">4</td><td><code>/</code></td></tr>
+      <tr class="highlight"><td>agencia la playa</td><td class="td-num">1.600</td><td class="td-num"><strong>1</strong></td><td><code>/</code></td></tr>
+      <tr class="warn"><td>licencia de obras</td><td class="td-num">1.600</td><td class="td-num">11</td><td><code>/que-son-las-licencias-de-obra-y-como-solicitarlas</code></td></tr>
+      <tr class="highlight"><td>venta de piso en gijon</td><td class="td-num">1.600</td><td class="td-num">6</td><td><code>/comprar-casa</code></td></tr>
+    </tbody>
+  </table>
+
+  <p style="font-size:12px; color: var(--muted);">Verde = posición top-10 · Amarillo = posición 11–20 (segunda página)</p>
+
+  <h3 id="s-keywords-intent">Distribución por intención de búsqueda</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Intención</th>
+        <th class="td-num">Keywords</th>
+        <th class="td-num">%</th>
+        <th class="td-num">Tráfico est.</th>
+        <th>Descripción</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Informacional</td><td class="td-num">5.800</td><td class="td-num">56%</td><td class="td-num">3.100</td><td>Blog, guías, barrios, restaurantes locales</td></tr>
+      <tr><td>Local</td><td class="td-num">2.100</td><td class="td-num">20%</td><td class="td-num">1.200</td><td>"Inmobiliaria Gijón" — alta intención de contacto</td></tr>
+      <tr><td>Comercial</td><td class="td-num">1.400</td><td class="td-num">14%</td><td class="td-num">513</td><td>"Pisos en venta gijón", "comprar piso" — buscadores activos</td></tr>
+      <tr><td>Navegacional</td><td class="td-num">1.000</td><td class="td-num">10%</td><td class="td-num">892</td><td>Marca propia — "agencia la playa"</td></tr>
+      <tr class="alert-row"><td>Transaccional</td><td class="td-num">18</td><td class="td-num">0.2%</td><td class="td-num">0</td><td>Casi inexistente — margen de mejora en captación directa</td></tr>
+    </tbody>
+  </table>
+
+  <div class="insight">
+    <strong>El 76% del tráfico no tiene intención transaccional directa</strong>
+    La mayor parte del tráfico llega de búsquedas informacionales y de barrio. Esto no es un problema si se convierte bien: añadir módulos de captación en los posts de más tráfico (La Suiza, guías fiscales, landings de barrio) puede convertir ese tráfico existente en leads sin generar nuevo contenido.
+  </div>
+
+  <h3 id="s-keywords-serp">Funciones especiales de Google (SERP Features)</h3>
+
+  <p>El sitio aparece en varios formatos enriquecidos de Google, lo que amplifica la visibilidad más allá de los resultados orgánicos estándar:</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Función SERP</th>
+        <th class="td-num">Keywords en los que aparece</th>
+        <th>Significado</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="highlight"><td>Imágenes</td><td class="td-num">684</td><td>El sitio aparece en búsquedas de imágenes — visibilidad adicional sin coste</td></tr>
+      <tr class="highlight"><td>AI Overviews (SGE)</td><td class="td-num">121</td><td>Google cita el sitio en sus resúmenes generados por IA — señal de autoridad</td></tr>
+      <tr><td>Reseñas</td><td class="td-num">110</td><td>Resultados con estrellas de valoración</td></tr>
+      <tr><td>Preguntas relacionadas (PAA)</td><td class="td-num">93</td><td>El sitio aparece en el bloque "La gente también pregunta"</td></tr>
+      <tr><td>Local Pack</td><td class="td-num">86</td><td>Resultados de Google Maps — clave para búsquedas locales</td></tr>
+      <tr><td>Sitelinks</td><td class="td-num">86</td><td>Resultados con sub-enlaces — señal de marca fuerte</td></tr>
+      <tr><td>GBP (Google Business Profile)</td><td class="td-num">24</td><td>Ficha de empresa de Google con datos directos</td></tr>
+    </tbody>
+  </table>
+</section>
+
+
+<!-- ═══════════════════════════ S-04: COMPETIDORES ═══════════════════════ -->
+<section id="s-competidores">
+  <h2><span class="num">04</span> Competidores orgánicos</h2>
+
+  <p>La competencia opera en dos niveles: los grandes portales nacionales (inevitables en las SERPs genéricas) y las inmobiliarias locales de Asturias que disputan las mismas búsquedas hiperlocales.</p>
+
+  <h3>Portales nacionales — competidores por keywords de compraventa</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Competidor</th>
+        <th class="td-num">Keywords comunes</th>
+        <th class="td-num">Pos. media ellos</th>
+        <th class="td-num">Pos. media La Playa</th>
+        <th>Valoración</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="alert-row"><td><strong>idealista.com</strong></td><td class="td-num">196</td><td class="td-num">8.0</td><td class="td-num">22.7</td><td>Dominante — inalcanzable en autoridad global</td></tr>
+      <tr class="warn"><td><strong>fotocasa.es</strong></td><td class="td-num">165</td><td class="td-num">21.5</td><td class="td-num">22.7</td><td>Paridad — compiten de igual a igual en búsquedas locales</td></tr>
+      <tr class="warn"><td><strong>yaencontre.com</strong></td><td class="td-num">92</td><td class="td-num">17.2</td><td class="td-num">22.7</td><td>Ventaja de ellos en long-tail local</td></tr>
+      <tr><td>habitaclia.com</td><td class="td-num">81</td><td class="td-num">20.9</td><td class="td-num">22.7</td><td>Paridad aproximada</td></tr>
+      <tr><td>pisos.com</td><td class="td-num">79</td><td class="td-num">17.7</td><td class="td-num">22.7</td><td>Competidor directo en keywords de compra</td></tr>
+      <tr><td>elcomercio.es</td><td class="td-num">70</td><td class="td-num">19.9</td><td class="td-num">22.7</td><td>Medio asturiano — autoridad editorial difícil de desplazar</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Inmobiliarias locales de Asturias — competidores directos</h3>
+
+  <div class="competitor-grid">
+    <div class="comp-card local">
+      <div class="comp-name">agenciadomingo.com</div>
+      <div class="comp-stat">43 keywords comunes</div>
+      <div class="comp-stat">3.100 keywords totales</div>
+      <div class="comp-stat" style="color:var(--p0)">Competidor principal</div>
+    </div>
+    <div class="comp-card local">
+      <div class="comp-name">elsolgrupo.com</div>
+      <div class="comp-stat">35 keywords comunes</div>
+      <div class="comp-stat">4.600 keywords totales</div>
+    </div>
+    <div class="comp-card portal">
+      <div class="comp-name">agenciaalvarez.com</div>
+      <div class="comp-stat">12 keywords comunes</div>
+      <div class="comp-stat">2.100 keywords totales</div>
+    </div>
+    <div class="comp-card portal">
+      <div class="comp-name">agencia-asturias.com</div>
+      <div class="comp-stat">12 keywords comunes</div>
+      <div class="comp-stat">2.900 keywords totales</div>
+    </div>
+    <div class="comp-card portal">
+      <div class="comp-name">sellmi.es</div>
+      <div class="comp-stat">12 keywords comunes</div>
+      <div class="comp-stat">3.400 keywords totales</div>
+    </div>
+  </div>
+
+  <div class="insight">
+    <strong>Ventaja competitiva de Agencia La Playa frente a las locales</strong>
+    Las inmobiliarias locales competidoras no tienen blog ni contenido editorial. Agencia La Playa ya rankea en búsquedas informacionales (barrios, guías, restaurantes locales) que sus competidores directos no alcanzan. Esta es una ventaja estructural que, bien aprovechada con CTAs adecuados, convierte visibilidad informacional en leads comerciales.
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════ S-05: WPO ═══════════════════════════════ -->
+<section id="s-wpo">
+  <h2><span class="num">05</span> Rendimiento técnico (WPO)</h2>
+
+  <p>Análisis de rendimiento con Lighthouse 13.4 — Desktop (julio 2026).</p>
+
+  <h3>Puntuaciones Lighthouse</h3>
+
+  <div class="score-row">
+    <span class="score-label">Performance</span>
+    <div class="score-bar-wrap"><div class="score-bar med" style="width:69%"></div></div>
+    <span class="score-val">69/100</span>
+  </div>
+  <div class="score-row">
+    <span class="score-label">SEO</span>
+    <div class="score-bar-wrap"><div class="score-bar med" style="width:77%"></div></div>
+    <span class="score-val">77/100</span>
+  </div>
+  <div class="score-row">
+    <span class="score-label">Best Practices</span>
+    <div class="score-bar-wrap"><div class="score-bar med" style="width:77%"></div></div>
+    <span class="score-val">77/100</span>
+  </div>
+  <div class="score-row">
+    <span class="score-label">Accessibility</span>
+    <div class="score-bar-wrap"><div class="score-bar good" style="width:86%"></div></div>
+    <span class="score-val">86/100</span>
+  </div>
+  <div class="score-row">
+    <span class="score-label">Agentic Browsing (IA)</span>
+    <div class="score-bar-wrap"><div class="score-bar poor" style="width:50%"></div></div>
+    <span class="score-val">50/100</span>
+  </div>
+
+  <h3>Core Web Vitals — Desktop</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Métrica</th>
+        <th class="td-num">Valor medido</th>
+        <th class="td-num">Umbral "Bueno"</th>
+        <th>Estado</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="highlight"><td><strong>FCP</strong> (First Contentful Paint)</td><td class="td-num">1,3 s</td><td class="td-num">&lt; 1,8 s</td><td>✓ Bueno</td></tr>
+      <tr class="warn"><td><strong>LCP</strong> (Largest Contentful Paint)</td><td class="td-num">3,9 s</td><td class="td-num">&lt; 2,5 s</td><td>⚠ Mejorable</td></tr>
+      <tr class="highlight"><td><strong>TBT</strong> (Total Blocking Time)</td><td class="td-num">4 ms</td><td class="td-num">&lt; 200 ms</td><td>✓ Excelente</td></tr>
+      <tr class="highlight"><td><strong>CLS</strong> (Cumulative Layout Shift)</td><td class="td-num">0,002</td><td class="td-num">&lt; 0,1</td><td>✓ Excelente</td></tr>
+      <tr class="warn"><td><strong>TTI</strong> (Time to Interactive)</td><td class="td-num">4,1 s</td><td class="td-num">&lt; 3,8 s</td><td>⚠ Mejorable</td></tr>
+      <tr><td><strong>Speed Index</strong></td><td class="td-num">3,0 s</td><td class="td-num">&lt; 3,4 s</td><td>~ Aceptable</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Principales problemas de rendimiento</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Problema</th>
+        <th class="td-num">Impacto</th>
+        <th>Descripción</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="alert-row"><td>Peso de página total</td><td class="td-num">11,6 MB</td><td>Muy por encima del estándar recomendado (&lt;3 MB). Principalmente imágenes sin comprimir y JS sin optimizar.</td></tr>
+      <tr class="warn"><td>JavaScript sin usar</td><td class="td-num">340 KB</td><td>JS cargado pero no utilizado en la carga inicial. Afecta directamente al LCP y TTI.</td></tr>
+      <tr class="warn"><td>CSS sin usar</td><td class="td-num">260 KB</td><td>Reglas CSS descargadas pero no aplicadas en la primera pantalla.</td></tr>
+      <tr><td>Latencia servidor (TTFB)</td><td class="td-num">192 ms</td><td>Aceptable pero mejorable. El servidor responde en ~0,2 s.</td></tr>
+      <tr><td>Imágenes</td><td class="td-num">—</td><td>Sin WebP, sin srcset, sin loading="lazy". Son la principal causa del peso de 11,6 MB.</td></tr>
+      <tr><td>slick.js cargado 2 veces</td><td class="td-num">~80 KB</td><td>La librería del carrusel se carga duplicada en la home.</td></tr>
+      <tr><td>Leaflet.js versión 2016</td><td class="td-num">500 KB</td><td>Versión 1.0.3 sin minificar ni defer. La versión actual es 1.9.4 y pesa la mitad.</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Terceros cargados en la web</h3>
+
+  <p>El sitio carga recursos de 8 dominios externos, lo que suma latencia y puede afectar la privacidad:</p>
+
+  <table>
+    <thead><tr><th>Tercero</th><th>Categoría</th></tr></thead>
+    <tbody>
+      <tr><td>Google Fonts</td><td>CDN tipografías</td></tr>
+      <tr><td>iagestion.com</td><td>CMS — scripts del panel de gestión</td></tr>
+      <tr><td>Google Tag Manager</td><td>Gestor de etiquetas</td></tr>
+      <tr><td>Google Analytics</td><td>Analítica</td></tr>
+      <tr><td>Hotjar</td><td>Analítica de comportamiento (mapas de calor)</td></tr>
+      <tr><td>Google/Doubleclick Ads</td><td>Publicidad (sin campañas activas — puede eliminarse)</td></tr>
+      <tr><td>Instagram</td><td>Widget social</td></tr>
+      <tr><td>Unpkg CDN</td><td>Librería JS externa</td></tr>
+    </tbody>
+  </table>
+
+  <div class="alert warn">
+    <p><strong>Google/Doubleclick Ads cargado sin campañas activas:</strong> el script de Google Ads se carga en cada página aunque no haya inversión publicitaria. Este script tiene un impacto no trivial en el rendimiento. Si no hay planes de activar SEM, se puede eliminar del GTM para ganar velocidad.</p>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════ S-06: BACKLINKS ══════════════════════════ -->
+<section id="s-backlinks">
+  <h2><span class="num">06</span> Autoridad y backlinks</h2>
+
+  <div class="kpis">
+    <div class="kpi"><div class="kpi-value">36/100</div><div class="kpi-label">Domain Trust</div></div>
+    <div class="kpi"><div class="kpi-value">1.601</div><div class="kpi-label">Backlinks totales</div></div>
+    <div class="kpi"><div class="kpi-value">167</div><div class="kpi-label">Dominios que enlazan</div></div>
+    <div class="kpi"><div class="kpi-value">85%</div><div class="kpi-label">Dofollow</div></div>
+    <div class="kpi"><div class="kpi-value">34/100</div><div class="kpi-label">Spam score</div></div>
+  </div>
+
+  <p>El Domain Trust de 36/100 es <strong>moderado-bajo para una inmobiliaria consolidada en una capital de provincia</strong>. Agencias de tamaño similar en mercados equivalentes suelen estar en el rango 45–60. Hay margen real de mejora.</p>
+
+  <h3>Distribución del perfil de enlaces</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Métrica</th>
+        <th class="td-num">Valor</th>
+        <th>Valoración</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Backlinks totales</td><td class="td-num">1.601</td><td>Volumen superficialmente alto — ver análisis de calidad</td></tr>
+      <tr><td>Dominios únicos que enlazan</td><td class="td-num">167</td><td>Correcto para el tamaño del sitio</td></tr>
+      <tr><td>Dominios principales únicos</td><td class="td-num">157</td><td>—</td></tr>
+      <tr class="highlight"><td>Dofollow (dominios)</td><td class="td-num">142</td><td>85% dofollow — buena proporción</td></tr>
+      <tr><td>Backlinks rotos</td><td class="td-num">10</td><td>Menor — fácil de limpiar</td></tr>
+      <tr><td>Páginas rotas enlazadas</td><td class="td-num">15</td><td>Menor — revisar y redirigir</td></tr>
+      <tr class="alert-row"><td>Spam score (backlinks)</td><td class="td-num">34/100</td><td>Por encima del umbral de riesgo bajo (&lt;20)</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Calidad del perfil — el problema de blogspot</h3>
+
+  <div class="alert">
+    <p><strong>Alerta: 66% de los backlinks provienen de blogspot.com</strong></p>
+    <p>1.057 de los 1.601 backlinks (66%) vienen de blogs de Blogspot de baja o nula autoridad que enlazan el sitio en todas sus páginas (bloques de sidebar o footer). Otros 22 proceden de <code>firebaseapp.com</code>, también de calidad nula. El 82% de todos los backlinks tienen como fuente plataformas de blogs.</p>
+    <p>No hay penalización activa visible — el tráfico está creciendo. Sin embargo, este perfil tiene un riesgo moderado ante actualizaciones del algoritmo de Google que evalúen la calidad de los enlaces entrantes. <strong>Se recomienda preparar y enviar un disavow file a Google Search Console</strong> con los dominios blogspot identificados como spam.</p>
+  </div>
+
+  <h3>Dominios de valor real</h3>
+
+  <table>
+    <thead><tr><th>Dominio</th><th>Tipo</th><th>Valor</th></tr></thead>
+    <tbody>
+      <tr class="highlight"><td>pisos.com</td><td>Portal inmobiliario nacional</td><td>Alto</td></tr>
+      <tr><td>qualisoptima.com</td><td>Plataforma partner (widget site-wide)</td><td>Medio</td></tr>
+      <tr><td>blogasturias.com</td><td>Directorio de blogs regionales</td><td>Medio</td></tr>
+      <tr><td>tourmake.es</td><td>Directorio de empresas local</td><td>Medio</td></tr>
+      <tr><td>inmoblog.com</td><td>Blog de marketing inmobiliario</td><td>Medio</td></tr>
+      <tr class="alert-row"><td>LNE / El Comercio / La Nueva España</td><td>Medios locales asturianos de referencia</td><td>— ausentes —</td></tr>
+    </tbody>
+  </table>
+
+  <p>No hay presencia en los medios de referencia de Asturias. Un único enlace editorial desde LNE o El Comercio tendría más impacto en autoridad que todos los backlinks de blogspot juntos.</p>
+</section>
+
+
+<!-- ═══════════════════════════ S-07: TÉCNICO ════════════════════════════ -->
+<section id="s-tecnico">
+  <h2><span class="num">07</span> Rastreo e indexación</h2>
+
+  <p>Problemas técnicos que afectan directamente a cómo Google rastrea e indexa el sitio.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Problema</th>
+        <th>Prioridad</th>
+        <th>Impacto</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="alert-row">
+        <td><strong>T1</strong></td>
+        <td>HTTP → HTTPS: redirect 301 no activo. La versión HTTP está indexada y posiciona mejor que HTTPS.</td>
+        <td>⛔ Crítico</td>
+        <td>La autoridad del dominio está partida entre dos versiones del mismo sitio. Google consolida señales en la versión que considera canónica — ahora la HTTP.</td>
+      </tr>
+      <tr class="alert-row">
+        <td><strong>T2</strong></td>
+        <td>Soft 404: URLs de inmuebles vendidos redirigen con 301 a la home.</td>
+        <td>⛔ Crítico</td>
+        <td>Google gasta presupuesto de rastreo en redirecciones que no aportan nada. Debería devolver 410 (Gone) para que Google elimine estas URLs del índice.</td>
+      </tr>
+      <tr class="alert-row">
+        <td><strong>T3</strong></td>
+        <td>Canonicals incorrectos: todas las categorías apuntan a la home como canonical.</td>
+        <td>⛔ Crítico</td>
+        <td>Google interpreta que todas las categorías son duplicados de la home y las ignora. Las landings de barrio, comprar-casa, alquilar etc. no se indexan correctamente.</td>
+      </tr>
+      <tr class="warn">
+        <td><strong>T4</strong></td>
+        <td>sitemap.xml devuelve error 404.</td>
+        <td>⚠ Alta</td>
+        <td>Google no tiene mapa de estructura del sitio. Las páginas estáticas (home, vender, nosotros...) pueden tardar semanas en reindexarse tras cambios.</td>
+      </tr>
+      <tr class="warn">
+        <td><strong>T5</strong></td>
+        <td>Sin datos estructurados (JSON-LD): sin Organization, sin RealEstateListing, sin BreadcrumbList.</td>
+        <td>⚠ Alta</td>
+        <td>Google no puede mostrar rich results (reseñas, sitelinks, detalles de ficha). Los competidores con schemas bien implementados tienen ventaja visual en la SERP.</td>
+      </tr>
+      <tr class="warn">
+        <td><strong>T6</strong></td>
+        <td>Titles en mayúsculas, genéricos en fichas de inmueble.</td>
+        <td>⚠ Alta</td>
+        <td>Títulos como "PISO EN VENTA EN GIJÓN — AGENCIA LA PLAYA" no se diferencian entre sí. CTR bajo y poca relevancia por keyword específico.</td>
+      </tr>
+      <tr>
+        <td><strong>T7</strong></td>
+        <td>NAP inconsistente: dos teléfonos distintos en la misma web.</td>
+        <td>Media</td>
+        <td>Google puede confundirse sobre los datos de contacto del negocio, lo que afecta al Local Pack y al GBP.</td>
+      </tr>
+      <tr>
+        <td><strong>T8</strong></td>
+        <td>Security headers ausentes (HSTS, X-Frame-Options, CSP).</td>
+        <td>Baja</td>
+        <td>Impacto en Best Practices de Lighthouse (77/100). Sin riesgo SEO directo pero sí de seguridad.</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+
+<!-- ═══════════════════════════ S-08: CONCLUSIONES ══════════════════════ -->
+<section id="s-conclusiones">
+  <h2><span class="num">08</span> Conclusiones y próximos pasos</h2>
+
+  <p>Agencia La Playa tiene una base SEO real y funcional: tráfico orgánico creciente, keywords con buenas posiciones en mercado local y un blog con contenido de valor. El problema es que varios errores técnicos importantes están actuando de freno — el sitio podría estar generando 30–50% más de tráfico sin ningún cambio de contenido.</p>
+
+  <h3>Las 5 acciones de mayor impacto</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Acción</th>
+        <th>Impacto esperado</th>
+        <th>Dificultad</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="alert-row">
+        <td>1</td>
+        <td><strong>Activar redirect HTTP → HTTPS</strong> (2 líneas en .htaccess)</td>
+        <td>Consolida toda la autoridad acumulada en una sola versión del dominio</td>
+        <td>Muy baja</td>
+      </tr>
+      <tr class="alert-row">
+        <td>2</td>
+        <td><strong>Corregir los canonicals</strong> de categorías e inmuebles</td>
+        <td>Permite a Google indexar correctamente las 26 landings de barrio y <code>/comprar-casa</code></td>
+        <td>Baja</td>
+      </tr>
+      <tr class="warn">
+        <td>3</td>
+        <td><strong>Implementar schemas JSON-LD</strong> (Organization, RealEstateListing, Breadcrumb)</td>
+        <td>Habilita rich results y mejora CTR en SERP — visible en 1–4 semanas</td>
+        <td>Media</td>
+      </tr>
+      <tr class="warn">
+        <td>4</td>
+        <td><strong>Crear y subir sitemap.xml</strong> con todas las páginas estáticas</td>
+        <td>Google reconoce la estructura completa del sitio — mejora velocidad de indexación</td>
+        <td>Baja</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td><strong>Añadir CTAs en posts de alto tráfico</strong> (La Suiza ~225 visitas/mes, guías fiscales ~500 visitas/mes)</td>
+        <td>Convierte tráfico existente en leads sin generar nuevo contenido</td>
+        <td>Baja</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Lo que está funcionando bien y debe mantenerse</h3>
+
+  <ul>
+    <li><strong>Blog activo con contenido local</strong> — genera tráfico real y es un activo diferencial frente a competidores locales sin blog</li>
+    <li><strong>Posiciones sólidas en keywords de compra</strong> — top-5 en "pisos gijon", "pisos en gijón venta", top-3 en "casa en venta gijon"</li>
+    <li><strong>Presencia en Local Pack</strong> — aparece en Google Maps para 86 búsquedas locales</li>
+    <li><strong>Aparición en AI Overviews de Google</strong> — el sitio ya es citado en los resúmenes generados por IA de Google para 121 búsquedas</li>
+    <li><strong>Crecimiento mensual</strong> — el tráfico está en tendencia positiva</li>
+  </ul>
+</section>
+
+
+<!-- Closing -->
+<div class="closing" id="cierre">
+  <h2>diegofresno.com</h2>
+  <p>Consultoría SEO independiente. Trabajamos con datos, no con suposiciones.</p>
+  <p style="margin-top: 8px; font-size: 13px; opacity: 0.65;">Informe preparado en julio 2026 · agencialaplaya.com</p>
+</div>
+
+</main>
+</div>
+</body>
+</html>

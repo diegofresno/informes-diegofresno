@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Informes SEO — diegofresno.com</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cyan:    #0080a8;
+    --cyan-bg: #e8f5fa;
+    --teal:    #08876e;
+    --bg:      #fafcff;
+    --text:    #0f1c2e;
+    --muted:   #5a6a7e;
+    --border:  #dde4ee;
+    --white:   #ffffff;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+  }
+
+  header {
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    padding: 20px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  header .logo {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: 900;
+    color: var(--text);
+    text-decoration: none;
+  }
+
+  header .logo span { color: var(--cyan); }
+
+  header p {
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  main {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 56px 48px;
+  }
+
+  .page-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 28px;
+    font-weight: 900;
+    margin-bottom: 8px;
+  }
+
+  .page-subtitle {
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 48px;
+  }
+
+  .section-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 16px;
+  }
+
+  .clients {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+  }
+
+  .client-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 28px;
+    transition: box-shadow .15s, border-color .15s;
+  }
+
+  .client-card:hover {
+    box-shadow: 0 4px 20px rgba(0,0,0,.06);
+    border-color: var(--cyan);
+  }
+
+  .client-name {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+
+  .client-meta {
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 20px;
+  }
+
+  .report-links { display: flex; flex-direction: column; gap: 8px; }
+
+  .report-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    text-decoration: none;
+    color: var(--text);
+    font-size: 13px;
+    font-weight: 500;
+    transition: background .12s, border-color .12s;
+  }
+
+  .report-link:hover {
+    background: var(--cyan-bg);
+    border-color: var(--cyan);
+    color: var(--cyan);
+  }
+
+  .report-link .icon {
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+
+  .badge {
+    margin-left: auto;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    background: var(--cyan-bg);
+    color: var(--cyan);
+    padding: 2px 7px;
+    border-radius: 4px;
+  }
+
+  .add-card {
+    background: transparent;
+    border: 2px dashed var(--border);
+    border-radius: 12px;
+    padding: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--muted);
+    font-size: 13px;
+    font-weight: 500;
+    gap: 8px;
+    cursor: default;
+  }
+
+  footer {
+    text-align: center;
+    padding: 32px;
+    font-size: 12px;
+    color: var(--muted);
+    border-top: 1px solid var(--border);
+    margin-top: 80px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <a class="logo" href="/">diego<span>fresno</span>.com</a>
+  <p>Panel de informes SEO</p>
+</header>
+
+<main>
+  <h1 class="page-title">Informes SEO</h1>
+  <p class="page-subtitle">Auditorías e informes de visibilidad por cliente.</p>
+
+  <div class="section-label">Inmobiliarias</div>
+
+  <div class="clients">
+
+    <!-- Agencia La Playa -->
+    <div class="client-card">
+      <div class="client-name">Agencia La Playa</div>
+      <div class="client-meta">agencialaplaya.com · Gijón · Julio 2026</div>
+      <div class="report-links">
+        <a class="report-link" href="/agencialaplaya/informe-visibilidad.html">
+          <span class="icon">📊</span>
+          Informe de visibilidad SEO
+          <span class="badge">Jul 2026</span>
+        </a>
+        <a class="report-link" href="/agencialaplaya/auditoria-tecnica.html">
+          <span class="icon">🔧</span>
+          Auditoría técnica
+          <span class="badge">Jul 2026</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Placeholder próximo cliente -->
+    <div class="add-card">
+      + Próximo cliente
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  diegofresno.com — Uso interno
+</footer>
+
+</body>
+</html>
