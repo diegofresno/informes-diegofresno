@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SEO | GEO | Nueva web — uono.es</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cyan:    #0080a8;
+    --cyan-bg: #e8f5fa;
+    --teal:    #08876e;
+    --teal-bg: #e6f4f1;
+    --amber:   #b45309;
+    --amber-bg:#fef3c7;
+    --purple:  #6d28d9;
+    --purple-bg:#ede9fe;
+    --bg:      #fafcff;
+    --text:    #0f1c2e;
+    --muted:   #5a6a7e;
+    --border:  #dde4ee;
+    --white:   #ffffff;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  /* COVER */
+  .cover {
+    background: var(--text);
+    color: var(--white);
+    padding: 80px 72px 72px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: -120px; right: -120px;
+    width: 480px; height: 480px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0,128,168,.35) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .cover-eyebrow {
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--cyan); margin-bottom: 20px;
+  }
+
+  .cover h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 44px; font-weight: 900;
+    line-height: 1.1; margin-bottom: 20px; max-width: 580px;
+  }
+
+  .cover h1 em { font-style: normal; color: var(--cyan); }
+
+  .cover-subtitle {
+    font-size: 17px; color: rgba(255,255,255,.7);
+    max-width: 520px; margin-bottom: 48px;
+  }
+
+  .cover-meta { display: flex; gap: 40px; font-size: 13px; color: rgba(255,255,255,.5); }
+  .cover-meta strong { display: block; font-size: 15px; font-weight: 600; color: var(--white); margin-bottom: 2px; }
+
+  .cover-logo {
+    position: absolute; bottom: 40px; right: 72px;
+    font-family: 'Poppins', sans-serif; font-size: 16px;
+    font-weight: 900; color: rgba(255,255,255,.4);
+  }
+  .cover-logo span { color: rgba(0,128,168,.8); }
+
+  /* LAYOUT */
+  .container { max-width: 860px; margin: 0 auto; padding: 0 72px; }
+  section { padding: 64px 0; border-bottom: 1px solid var(--border); }
+  section:last-child { border-bottom: none; }
+
+  .section-eyebrow {
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--cyan); margin-bottom: 10px;
+  }
+
+  .section-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 26px; font-weight: 900;
+    margin-bottom: 12px; line-height: 1.2;
+  }
+
+  .section-lead {
+    font-size: 15px; color: var(--muted);
+    max-width: 640px; margin-bottom: 40px;
+  }
+
+  /* SITEMAP TREE */
+  .sitemap { display: flex; flex-direction: column; gap: 8px; }
+
+  .sitemap-root {
+    background: var(--text);
+    color: var(--white);
+    border-radius: 12px;
+    padding: 20px 24px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .sitemap-root-url {
+    font-family: 'Poppins', sans-serif;
+    font-size: 17px; font-weight: 900;
+    flex-shrink: 0;
+  }
+
+  .sitemap-root-desc { font-size: 13px; color: rgba(255,255,255,.6); margin-top: 3px; }
+
+  .sitemap-children { display: flex; flex-direction: column; gap: 6px; padding-left: 24px; }
+
+  .sitemap-node {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 20px;
+    display: grid;
+    grid-template-columns: 220px 1fr auto;
+    gap: 16px;
+    align-items: center;
+  }
+
+  .sitemap-node.priority-high { border-left: 3px solid var(--teal); }
+  .sitemap-node.priority-med  { border-left: 3px solid var(--amber); }
+  .sitemap-node.priority-low  { border-left: 3px solid var(--border); }
+
+  .sitemap-url {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px; font-weight: 700;
+    color: var(--cyan);
+    font-variant-ligatures: none;
+  }
+
+  .sitemap-info h4 { font-size: 14px; font-weight: 600; margin-bottom: 3px; }
+  .sitemap-info p  { font-size: 12px; color: var(--muted); }
+
+  .sitemap-kw {
+    font-size: 11px; font-weight: 700;
+    background: var(--cyan-bg); color: var(--cyan);
+    padding: 4px 10px; border-radius: 4px;
+    white-space: nowrap; text-align: right;
+  }
+
+  .sitemap-kw span { display: block; font-weight: 400; color: var(--muted); font-size: 10px; margin-top: 2px; }
+
+  .sitemap-node.pending {
+    opacity: .7;
+    background: var(--bg);
+  }
+
+  .sitemap-node.pending .sitemap-kw {
+    background: var(--amber-bg); color: var(--amber);
+  }
+
+  /* BLOG POSTS */
+  .posts { display: flex; flex-direction: column; gap: 20px; }
+
+  .post-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 80px 1fr;
+  }
+
+  .post-num {
+    background: var(--cyan-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 28px;
+    font-weight: 900;
+    color: var(--cyan);
+  }
+
+  .post-body { padding: 24px 28px; }
+
+  .post-funnel {
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .post-funnel.top    { color: #7c3aed; }
+  .post-funnel.mid    { color: var(--teal); }
+  .post-funnel.bottom { color: var(--amber); }
+
+  .post-title { font-family: 'Poppins', sans-serif; font-size: 17px; font-weight: 900; margin-bottom: 8px; line-height: 1.3; }
+
+  .post-desc { font-size: 13px; color: var(--muted); margin-bottom: 14px; line-height: 1.5; }
+
+  .post-meta { display: flex; gap: 12px; flex-wrap: wrap; }
+
+  .post-tag {
+    font-size: 11px; font-weight: 700;
+    padding: 3px 10px; border-radius: 4px;
+    letter-spacing: 0.04em;
+  }
+
+  .post-tag.kw      { background: var(--cyan-bg); color: var(--cyan); }
+  .post-tag.vol     { background: #f0fdf4; color: #166534; }
+  .post-tag.kd      { background: #f0fdf4; color: #166534; }
+  .post-tag.intent  { background: var(--purple-bg); color: var(--purple); }
+
+  /* COMPARISON */
+  .comparison {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .option {
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+
+  .option-header {
+    padding: 24px 28px 20px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .option-header.wp   { background: #f0f6fe; }
+  .option-header.next { background: var(--text); }
+
+  .option-label {
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .option-header.wp   .option-label { color: #2563eb; }
+  .option-header.next .option-label { color: var(--cyan); }
+
+  .option-name {
+    font-family: 'Poppins', sans-serif;
+    font-size: 22px; font-weight: 900;
+  }
+
+  .option-header.wp   .option-name { color: var(--text); }
+  .option-header.next .option-name { color: var(--white); }
+
+  .option-tagline {
+    font-size: 13px; margin-top: 4px;
+  }
+
+  .option-header.wp   .option-tagline { color: var(--muted); }
+  .option-header.next .option-tagline { color: rgba(255,255,255,.6); }
+
+  .option-body { background: var(--white); padding: 24px 28px; }
+
+  .option-rows { display: flex; flex-direction: column; gap: 14px; }
+
+  .option-row { display: flex; gap: 10px; align-items: flex-start; }
+
+  .option-row-icon {
+    width: 20px; height: 20px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; margin-top: 1px;
+    font-size: 11px; font-weight: 700;
+  }
+
+  .pro  .option-row-icon { background: #dcfce7; color: #166534; }
+  .con  .option-row-icon { background: #fee2e2; color: #991b1b; }
+  .note .option-row-icon { background: var(--amber-bg); color: var(--amber); }
+
+  .option-row-text { font-size: 13px; line-height: 1.5; }
+  .option-row-text strong { display: block; font-weight: 600; color: var(--text); }
+  .option-row-text span { color: var(--muted); }
+
+  .option-price {
+    background: var(--bg);
+    border-top: 1px solid var(--border);
+    padding: 20px 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .option-price-label { font-size: 12px; color: var(--muted); }
+  .option-price-value {
+    font-family: 'Poppins', sans-serif;
+    font-size: 22px; font-weight: 900;
+    color: var(--text);
+  }
+
+  .option-price-value small {
+    font-size: 12px; font-weight: 400;
+    color: var(--muted); font-family: 'Inter', sans-serif;
+  }
+
+  /* CALLOUT */
+  .callout {
+    background: var(--cyan-bg);
+    border: 1px solid rgba(0,128,168,.2);
+    border-radius: 12px;
+    padding: 24px 28px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    margin-top: 28px;
+  }
+
+  .callout-icon {
+    width: 36px; height: 36px; flex-shrink: 0;
+    background: var(--white); border-radius: 9px;
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  .callout-text h4 { font-weight: 700; font-size: 14px; margin-bottom: 5px; }
+  .callout-text p  { font-size: 13px; color: var(--muted); }
+
+  /* CALCULATOR SECTION */
+  .calc-flow {
+    display: grid;
+    grid-template-columns: 1fr 28px 1fr 28px 1fr;
+    gap: 12px;
+    align-items: start;
+    margin-bottom: 32px;
+  }
+
+  .calc-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--muted);
+    font-size: 20px;
+    padding-top: 52px;
+  }
+
+  .calc-step {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+  }
+
+  .calc-step-num {
+    background: var(--cyan-bg);
+    color: var(--cyan);
+    font-family: 'Poppins', sans-serif;
+    font-size: 22px; font-weight: 900;
+    padding: 14px 18px 10px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .calc-step-body { padding: 18px; }
+  .calc-step-body h4 { font-size: 13px; font-weight: 700; margin-bottom: 12px; line-height: 1.3; }
+
+  .calc-fields { display: flex; flex-wrap: wrap; gap: 6px; }
+
+  .calc-field {
+    font-size: 11px; font-weight: 600;
+    background: var(--bg); border: 1px solid var(--border);
+    border-radius: 4px; padding: 4px 9px; color: var(--text);
+  }
+
+  .calc-result {
+    background: var(--bg); border: 1px solid var(--border);
+    border-radius: 10px; padding: 14px; text-align: center;
+  }
+
+  .calc-result-label {
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 6px;
+  }
+
+  .calc-result-value {
+    font-family: 'Poppins', sans-serif;
+    font-size: 19px; font-weight: 900;
+    color: var(--teal); margin-bottom: 5px;
+  }
+
+  .calc-result-sub { font-size: 11px; color: var(--muted); line-height: 1.4; }
+
+  .calc-cta-text {
+    font-size: 13px; color: var(--muted);
+    line-height: 1.6; font-style: italic;
+    border-left: 3px solid var(--cyan);
+    padding-left: 12px; margin-top: 2px;
+  }
+
+  /* SEO PHASES */
+  .seo-phases { display: flex; flex-direction: column; gap: 16px; margin-bottom: 32px; }
+
+  .seo-phase {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+  }
+
+  .seo-phase.included {
+    border-color: rgba(22,163,74,.3);
+    border-left: 3px solid #16a34a;
+  }
+
+  .seo-phase-head {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 20px;
+    align-items: center;
+    padding: 24px 28px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .seo-phase-label {
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 6px;
+  }
+
+  .seo-phase-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px; font-weight: 900; margin-bottom: 4px;
+  }
+
+  .seo-phase-sub { font-size: 12px; color: var(--muted); }
+
+  .seo-phase-price {
+    display: flex; flex-direction: column;
+    align-items: flex-end; gap: 7px;
+  }
+
+  .seo-price-box {
+    background: var(--bg); border: 1px solid var(--border);
+    border-radius: 8px; padding: 10px 18px; text-align: center;
+  }
+
+  .seo-price-amount {
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px; font-weight: 900; color: var(--text);
+  }
+
+  .seo-price-amount small {
+    font-size: 13px; font-weight: 400;
+    font-family: 'Inter', sans-serif; color: var(--muted);
+  }
+
+  .seo-price-label { font-size: 10px; color: var(--muted); margin-top: 2px; }
+
+  .badge-included {
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    background: #dcfce7; color: #166534;
+    padding: 4px 10px; border-radius: 4px;
+  }
+
+  .badge-onetime {
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    background: var(--amber-bg); color: var(--amber);
+    padding: 4px 10px; border-radius: 4px;
+  }
+
+  .seo-phase-body { padding: 20px 28px; }
+
+  .seo-phase-body ul {
+    list-style: none;
+    display: flex; flex-direction: column; gap: 10px;
+  }
+
+  .seo-phase-body li {
+    font-size: 13px; line-height: 1.5;
+    padding-left: 18px; position: relative;
+  }
+
+  .seo-phase-body li::before {
+    content: '→';
+    position: absolute; left: 0;
+    color: var(--cyan); font-size: 12px;
+  }
+
+  .seo-phase-body li strong { font-weight: 600; }
+  .seo-phase-body li span { color: var(--muted); }
+
+  .price-crossed { text-decoration: line-through; color: var(--muted); }
+
+  /* FOOTER */
+  .doc-footer {
+    background: var(--text);
+    color: rgba(255,255,255,.5);
+    padding: 40px 72px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+  }
+
+  .doc-footer strong { display: block; color: var(--white); font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+  .doc-footer-logo  { font-family: 'Poppins', sans-serif; font-size: 18px; font-weight: 900; color: rgba(255,255,255,.4); }
+  .doc-footer-logo span { color: rgba(0,128,168,.8); }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-eyebrow">Propuesta SEO + Desarrollo web · Julio 2026</div>
+  <h1>SEO | GEO | <em>Nueva web para uono.es</em></h1>
+  <p class="cover-subtitle">Plan SEO y GEO, arquitectura de contenidos, plan editorial de lanzamiento y comparativa de tecnologías para el nuevo sitio web de UONO.</p>
+  <div class="cover-meta">
+    <div><strong>uono.es</strong>Gestión integral de alquiler · Madrid</div>
+    <div><strong>Preparado por</strong>Diego Fresno · diegofresno.com</div>
+    <div><strong>Fecha</strong>Julio 2026</div>
+  </div>
+  <div class="cover-logo">diego<span>fresno</span>.com</div>
+</div>
+
+<div class="container">
+
+<!-- SECCIÓN 1: ARQUITECTURA -->
+<section>
+  <div class="section-eyebrow">01 — Arquitectura</div>
+  <h2 class="section-title">Estructura de la web</h2>
+  <p class="section-lead">Cada URL tiene un propósito concreto: o convierte a un propietario en lead, o posiciona para una búsqueda específica, o hace las dos cosas. No hay páginas sin objetivo.</p>
+
+  <div class="sitemap">
+
+    <div class="sitemap-root">
+      <div>
+        <div class="sitemap-root-url">uono.es/</div>
+        <div class="sitemap-root-desc">Home · Propuesta de valor principal + formulario de captación + reseñas + FAQs</div>
+      </div>
+    </div>
+
+    <div class="sitemap-children">
+
+      <!-- SERVICIOS -->
+      <div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding:12px 4px 4px;">Landings de servicio</div>
+
+      <div class="sitemap-node priority-high">
+        <div class="sitemap-url">/gestion-integral-alquiler-madrid/</div>
+        <div class="sitemap-info">
+          <h4>Gestión integral en Madrid</h4>
+          <p>Landing principal de servicio. El proceso completo: búsqueda de inquilino, contrato, cobro, incidencias. CTA directo al formulario.</p>
+        </div>
+        <div class="sitemap-kw">170 + 70 /mes<span>KD muy bajo · CPC hasta 32€</span></div>
+      </div>
+
+      <div class="sitemap-node priority-high">
+        <div class="sitemap-url">/alquiler-garantizado-propietarios-madrid/</div>
+        <div class="sitemap-info">
+          <h4>Alquiler garantizado</h4>
+          <p>El diferencial core de UONO: cobro el día 1 pase lo que pase, 16 meses de garantía, 0% morosidad.</p>
+        </div>
+        <div class="sitemap-kw">140 /mes<span>Intención comercial alta</span></div>
+      </div>
+
+      <div class="sitemap-node priority-high">
+        <div class="sitemap-url">/administracion-alquileres-madrid/</div>
+        <div class="sitemap-info">
+          <h4>Administración de alquileres</h4>
+          <p>Perfil de propietario que busca delegar la gestión completa del día a día: incidencias, contratos, fianzas, comunicaciones.</p>
+        </div>
+        <div class="sitemap-kw">70 /mes<span>KD 8 — muy accesible</span></div>
+      </div>
+
+      <!-- INMUEBLES -->
+      <div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding:12px 4px 4px;">Sección inmuebles (vía IAGestión API)</div>
+
+      <div class="sitemap-node priority-high">
+        <div class="sitemap-url">/pisos-en-alquiler/</div>
+        <div class="sitemap-info">
+          <h4>Pisos disponibles para alquilar</h4>
+          <p>Listado de inmuebles disponibles en ese momento, alimentado desde IAGestión vía API. Filtros por zona, tipo y precio. Si no hay disponibles, se muestra un formulario para que el inquilino registre su demanda con sus datos.</p>
+        </div>
+        <div class="sitemap-kw">Doble objetivo<span>Inquilinos + leads demanda</span></div>
+      </div>
+
+      <div class="sitemap-node priority-high">
+        <div class="sitemap-url">/pisos-en-alquiler/[slug]/</div>
+        <div class="sitemap-info">
+          <h4>Ficha individual de inmueble</h4>
+          <p>Página por piso con fotos, descripción, superficie, zona y CTA de contacto. Generada automáticamente desde la API de IAGestión. Schema RealEstateListing para SEO.</p>
+        </div>
+        <div class="sitemap-kw">Auto-generado<span>Schema rich results</span></div>
+      </div>
+
+      <div class="sitemap-node priority-high">
+        <div class="sitemap-url">/alquilados-con-exito/</div>
+        <div class="sitemap-info">
+          <h4>Últimos alquilados con éxito</h4>
+          <p>Social proof para propietarios indecisos: inmuebles recientemente arrendados por UONO. Mensaje: "Más propietarios que cobran su renta el día 1, sin franquicias, sin carencias." Demuestra capacidad real de comercialización.</p>
+        </div>
+        <div class="sitemap-kw">Conversión propietario<span>Prueba social</span></div>
+      </div>
+
+      <!-- BLOG -->
+      <div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding:12px 4px 4px;">Blog</div>
+
+      <div class="sitemap-node priority-med">
+        <div class="sitemap-url">/blog/</div>
+        <div class="sitemap-info">
+          <h4>Listado de artículos</h4>
+          <p>Contenido informacional para propietarios que aún no saben que quieren contratar UONO. Capta tráfico de la parte alta del funnel.</p>
+        </div>
+        <div class="sitemap-kw">Tráfico orgánico<span>Funnel informacional</span></div>
+      </div>
+
+      <div class="sitemap-node priority-med">
+        <div class="sitemap-url">/blog/[slug]/</div>
+        <div class="sitemap-info">
+          <h4>Artículos individuales</h4>
+          <p>4 posts de lanzamiento planificados. Ver sección 02 para el detalle completo de cada uno.</p>
+        </div>
+        <div class="sitemap-kw">Ver sección 02<span>Plan editorial</span></div>
+      </div>
+
+      <!-- HERRAMIENTA DE CAPTACIÓN -->
+      <div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding:12px 4px 4px;">Herramienta de captación</div>
+
+      <div class="sitemap-node priority-high">
+        <div class="sitemap-url">/calculadora-alquiler-madrid/</div>
+        <div class="sitemap-info">
+          <h4>Calculadora de renta estimada</h4>
+          <p>El propietario introduce zona, metros, habitaciones y estado del piso y recibe al instante una estimación de renta. Al final del resultado, formulario de captación para afinar la valoración con un asesor. Lead magnet de alta intención.</p>
+        </div>
+        <div class="sitemap-kw">Lead magnet<span>Alta intención de alquilar</span></div>
+      </div>
+
+      <!-- INQUILINOS -->
+      <div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding:12px 4px 4px;">Servicio para inquilinos</div>
+
+      <div class="sitemap-node priority-high">
+        <div class="sitemap-url">/personal-shopper-inmobiliario-madrid/</div>
+        <div class="sitemap-info">
+          <h4>Personal shopper inmobiliario para inquilinos</h4>
+          <p>UONO busca activamente el piso que necesita el inquilino según sus criterios. Acceso a la cartera propia de IAGestión + Bon Lar. Asesoramiento en contrato, fianza y cambio de suministros. Entrada desde el menú "Soy inquilino".</p>
+        </div>
+        <div class="sitemap-kw">Doble beneficio<span>Inquilinos + leads propietarios</span></div>
+      </div>
+
+      <!-- CORPORATIVO -->
+      <div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding:12px 4px 4px;">Páginas corporativas</div>
+
+      <div class="sitemap-node priority-low">
+        <div class="sitemap-url">/sobre-nosotros/</div>
+        <div class="sitemap-info">
+          <h4>Quiénes somos</h4>
+          <p>Historia, equipo y vínculo con Bon Lar. Los +25 años de experiencia son un diferencial competitivo que hay que comunicar bien.</p>
+        </div>
+        <div class="sitemap-kw">E-E-A-T<span>Confianza y autoridad</span></div>
+      </div>
+
+      <div class="sitemap-node priority-low">
+        <div class="sitemap-url">/contacto/</div>
+        <div class="sitemap-info">
+          <h4>Contacto</h4>
+          <p>Formulario de captación de propietarios. Réplica del formulario de la home, accesible desde cualquier punto de la web.</p>
+        </div>
+        <div class="sitemap-kw">Conversión<span>Lead form</span></div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="callout">
+    <div class="callout-icon">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0080a8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+      </svg>
+    </div>
+    <div class="callout-text">
+      <h4>Navegación bipartita: Soy Propietario / Soy Inquilino</h4>
+      <p>La web sirve a dos audiencias con necesidades distintas. El menú principal tendrá dos entradas separadas: "Soy propietario" (→ gestión integral, alquiler garantizado) y "Soy inquilino" (→ personal shopper inmobiliario). Esta separación clara desde el primer clic reduce la fricción y mejora la conversión en ambos perfiles. Los inmuebles disponibles y los "alquilados con éxito" funcionan como puente entre las dos audiencias.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SECCIÓN 2: BLOG -->
+<section>
+  <div class="section-eyebrow">02 — Plan editorial de lanzamiento</div>
+  <h2 class="section-title">Los primeros cuatro posts</h2>
+  <p class="section-lead">Cuatro artículos que cubren el funnel completo: desde el propietario que aún no sabe que existe este tipo de servicio, hasta el que ya está comparando precios. Ordenados por prioridad de publicación.</p>
+
+  <div class="posts">
+
+    <div class="post-card">
+      <div class="post-num">1</div>
+      <div class="post-body">
+        <div class="post-funnel bottom">Fase decisión — Bottom of funnel</div>
+        <div class="post-title">¿Cuánto cobra una empresa de gestión de alquileres en Madrid?</div>
+        <div class="post-desc">El propietario que busca esto ya sabe que quiere contratar — solo está comparando precios. El artículo explica los modelos de cobro del mercado (porcentaje de la renta, tarifa fija, sin comisiones) y posiciona el modelo de UONO como el más transparente. CTA al formulario al final.</div>
+        <div class="post-meta">
+          <span class="post-tag kw">People Also Ask detectado</span>
+          <span class="post-tag intent">Intención comercial</span>
+          <span class="post-tag kd">KD muy bajo</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="post-card">
+      <div class="post-num">2</div>
+      <div class="post-body">
+        <div class="post-funnel top" style="color:#7c3aed;">Fase conciencia — Top of funnel</div>
+        <div class="post-title">Seguro de impago de alquiler: qué es, cuánto cuesta y qué alternativas hay</div>
+        <div class="post-desc">La keyword con más volumen del nicho (3.600 búsquedas/mes). El propietario preocupado por la morosidad llega buscando un seguro — el artículo explica cómo funciona, sus limitaciones (franquicia, carencia, trámites) y presenta la gestión integral como la alternativa que elimina el problema de raíz.</div>
+        <div class="post-meta">
+          <span class="post-tag kw">seguro impago alquiler</span>
+          <span class="post-tag vol">3.600 búsquedas/mes</span>
+          <span class="post-tag kd">KD 12</span>
+          <span class="post-tag intent">Intención informacional</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="post-card">
+      <div class="post-num">3</div>
+      <div class="post-body">
+        <div class="post-funnel mid">Fase consideración — Middle of funnel</div>
+        <div class="post-title">¿Gestiono mi alquiler solo o contrato una empresa? Guía para propietarios en Madrid</div>
+        <div class="post-desc">El propietario que está valorando opciones. El artículo analiza honestamente las dos alternativas — qué implica gestionar solo (tiempo, riesgo, trámites legales) y qué aporta delegar — y concluye con los criterios para elegir. UONO aparece como ejemplo de gestión profesional, sin venta agresiva.</div>
+        <div class="post-meta">
+          <span class="post-tag kw">gestión alquiler propietarios</span>
+          <span class="post-tag intent">Intención comparativa</span>
+          <span class="post-tag kd">KD bajo</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="post-card">
+      <div class="post-num">4</div>
+      <div class="post-body">
+        <div class="post-funnel top" style="color:#7c3aed;">Fase conciencia — Top of funnel</div>
+        <div class="post-title">Qué es la gestión integral del alquiler y qué incluye exactamente</div>
+        <div class="post-desc">El propietario que no conoce el concepto. Artículo educativo que explica qué servicios cubre una empresa de gestión integral (búsqueda de inquilino, contrato, cobro, incidencias, plataforma) y cuándo tiene sentido contratar uno. Introduce el Método UONO de forma natural en la explicación.</div>
+        <div class="post-meta">
+          <span class="post-tag kw">gestión integral alquiler</span>
+          <span class="post-tag vol">170 búsquedas/mes</span>
+          <span class="post-tag kd">KD 2 — mínima competencia</span>
+          <span class="post-tag intent">Intención informacional</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SECCIÓN 3: CALCULADORA DE RENTA -->
+<section>
+  <div class="section-eyebrow">03 — Lead magnet</div>
+  <h2 class="section-title">Calculadora de renta estimada</h2>
+  <p class="section-lead">Una herramienta interactiva donde el propietario introduce los datos de su vivienda y obtiene al instante una estimación de la renta mensual que podría pedir en Madrid. El propietario que llega a calcular ya está pensando en alquilar — la calculadora captura ese momento con un formulario de alta intención justo después del resultado.</p>
+
+  <div class="calc-flow">
+
+    <!-- PASO 1 -->
+    <div class="calc-step">
+      <div class="calc-step-num">1</div>
+      <div class="calc-step-body">
+        <h4>El propietario completa el formulario</h4>
+        <div class="calc-fields">
+          <span class="calc-field">Zona o barrio</span>
+          <span class="calc-field">Metros cuadrados</span>
+          <span class="calc-field">Nº habitaciones</span>
+          <span class="calc-field">¿Amueblado?</span>
+          <span class="calc-field">Estado del piso</span>
+          <span class="calc-field">Planta y ascensor</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="calc-arrow">→</div>
+
+    <!-- PASO 2 -->
+    <div class="calc-step">
+      <div class="calc-step-num">2</div>
+      <div class="calc-step-body">
+        <h4>Recibe la estimación al instante</h4>
+        <div class="calc-result">
+          <div class="calc-result-label">Renta estimada</div>
+          <div class="calc-result-value">950 € – 1.150 €/mes</div>
+          <div class="calc-result-sub">Basado en inmuebles similares en esta zona de Madrid</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="calc-arrow">→</div>
+
+    <!-- PASO 3 -->
+    <div class="calc-step">
+      <div class="calc-step-num">3</div>
+      <div class="calc-step-body">
+        <h4>Formulario de captación integrado</h4>
+        <p class="calc-cta-text">"Para afinar esta estimación con los datos reales de tu vivienda, déjanos tus datos y un asesor de UONO te llama."</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="callout">
+    <div class="callout-icon">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0080a8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+      </svg>
+    </div>
+    <div class="callout-text">
+      <h4>Por qué convierte mejor que un formulario de contacto</h4>
+      <p>El propietario que llega a una calculadora ya ha tomado una decisión implícita: está valorando alquilar. La herramienta aprovecha ese momento de intención máxima. El formulario aparece justo cuando el usuario tiene en pantalla un número concreto — su renta estimada — lo que hace que el paso siguiente (pedir más información) sea natural. Vivara, uno de los principales competidores en Madrid, ya lo tiene implementado. La calculadora se puede construir con datos de mercado estáticos o, si IAGestión lo permite, conectada a sus datos reales de rentas de la zona.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SECCIÓN 4: COMPARATIVA TECNOLOGÍAS -->
+<section>
+  <div class="section-eyebrow">04 — Tecnología</div>
+  <h2 class="section-title">WordPress o Next.js</h2>
+  <p class="section-lead">Dos opciones con perfiles distintos. La elección correcta depende del nivel de autonomía que quiera tener el cliente sobre el contenido y de cómo exponga IAGestión sus datos.</p>
+
+  <div class="comparison">
+
+    <!-- WORDPRESS -->
+    <div class="option">
+      <div class="option-header wp">
+        <div class="option-label">Opción A</div>
+        <div class="option-name">WordPress</div>
+        <div class="option-tagline">Autonomía máxima para el cliente</div>
+      </div>
+      <div class="option-body">
+        <div class="option-rows">
+
+          <div class="option-row pro">
+            <div class="option-row-icon">✓</div>
+            <div class="option-row-text">
+              <strong>El cliente edita todo visualmente, sin developer</strong>
+              <span>Con Gutenberg (editor de bloques nativo), el cliente puede editar Home, Contacto, landings de servicio, posts y cualquier página — no solo el blog. Construido con Full Site Editing, incluso el header y el footer son editables sin tocar código.</span>
+            </div>
+          </div>
+
+          <div class="option-row pro">
+            <div class="option-row-icon">✓</div>
+            <div class="option-row-text">
+              <strong>Más opciones de integración con IAGestión</strong>
+              <span>Si IAGestión tiene plugin propio para WordPress o una integración ya construida, el desarrollo se reduce significativamente.</span>
+            </div>
+          </div>
+
+          <div class="option-row pro">
+            <div class="option-row-icon">✓</div>
+            <div class="option-row-text">
+              <strong>Ecosistema maduro</strong>
+              <span>Plugins para SEO (RankMath), formularios, caché, CDN, seguridad. Mucha documentación y soporte.</span>
+            </div>
+          </div>
+
+          <div class="option-row con">
+            <div class="option-row-icon">✗</div>
+            <div class="option-row-text">
+              <strong>Peor rendimiento por defecto</strong>
+              <span>Requiere hosting específico (no vale cualquier hosting barato), caché bien configurada y optimización activa para igualar los Core Web Vitals de Next.js.</span>
+            </div>
+          </div>
+
+          <div class="option-row con">
+            <div class="option-row-icon">✗</div>
+            <div class="option-row-text">
+              <strong>Mayor superficie de seguridad</strong>
+              <span>Actualizaciones constantes de plugins, temas y el propio WordPress. Requiere mantenimiento mensual.</span>
+            </div>
+          </div>
+
+          <div class="option-row note">
+            <div class="option-row-icon">!</div>
+            <div class="option-row-text">
+              <strong>Recomendado si</strong>
+              <span>El cliente quiere total autonomía sobre el contenido o IAGestión tiene integración nativa con WordPress.</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="option-price">
+        <div class="option-price-label">Inversión estimada</div>
+        <div class="option-price-value">Por definir <small>+ mant. mensual</small></div>
+      </div>
+    </div>
+
+    <!-- NEXT.JS -->
+    <div class="option">
+      <div class="option-header next">
+        <div class="option-label">Opción B</div>
+        <div class="option-name" style="color:white;">Next.js</div>
+        <div class="option-tagline">Máximo rendimiento SEO y GEO</div>
+      </div>
+      <div class="option-body">
+        <div class="option-rows">
+
+          <div class="option-row pro">
+            <div class="option-row-icon">✓</div>
+            <div class="option-row-text">
+              <strong>SEO y GEO de primer nivel</strong>
+              <span>Renderizado en servidor, Core Web Vitals perfectos de serie, schema markup preciso, llms.txt y preparación para búsquedas con IA.</span>
+            </div>
+          </div>
+
+          <div class="option-row pro">
+            <div class="option-row-icon">✓</div>
+            <div class="option-row-text">
+              <strong>Integración limpia con IAGestión API</strong>
+              <span>Las llamadas a la API se hacen en servidor — las credenciales nunca se exponen. Los inmuebles se renderizan como HTML estático para Google.</span>
+            </div>
+          </div>
+
+          <div class="option-row pro">
+            <div class="option-row-icon">✓</div>
+            <div class="option-row-text">
+              <strong>Despliegue en Vercel</strong>
+              <span>Infraestructura sin mantenimiento, SSL automático, CDN global, previews por cada cambio. Coste prácticamente cero para este volumen de tráfico.</span>
+            </div>
+          </div>
+
+          <div class="option-row pro">
+            <div class="option-row-icon">✓</div>
+            <div class="option-row-text">
+              <strong>Panel de edición incluido por defecto</strong>
+              <span>El proyecto incluye Sanity CMS (o equivalente): el cliente edita textos, imágenes y publica posts desde un panel visual propio, sin tocar código ni depender de un developer.</span>
+            </div>
+          </div>
+
+          <div class="option-row con">
+            <div class="option-row-icon">✗</div>
+            <div class="option-row-text">
+              <strong>Mayor coste inicial de desarrollo</strong>
+              <span>Construir la integración con IAGestión y las páginas desde cero lleva más horas que un tema WordPress configurado.</span>
+            </div>
+          </div>
+
+          <div class="option-row note">
+            <div class="option-row-icon">!</div>
+            <div class="option-row-text">
+              <strong>Recomendado si</strong>
+              <span>El SEO y GEO son prioridad máxima y se quiere la integración más limpia con IAGestión API.</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="option-price">
+        <div class="option-price-label">Inversión estimada</div>
+        <div class="option-price-value">Por definir <small>+ Vercel ~0 €/mes</small></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="callout" style="background:var(--teal-bg); border-color:rgba(8,135,110,.2);">
+    <div class="callout-icon">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#08876e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="20 6 9 17 4 12"/>
+      </svg>
+    </div>
+    <div class="callout-text">
+      <h4>Nuestra recomendación</h4>
+      <p>Si IAGestión expone los datos de inmuebles vía API documentada — que es lo más probable — recomendamos Next.js en Vercel. La integración será más limpia, el rendimiento SEO mejor desde el primer día y el coste de infraestructura es casi cero. El proyecto incluye Sanity CMS por defecto, con lo que el cliente tiene panel visual propio para editar contenido sin depender de un developer.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SECCIÓN 5: SEO -->
+<section>
+  <div class="section-eyebrow">05 — SEO</div>
+  <h2 class="section-title">Plan SEO y GEO</h2>
+  <p class="section-lead">El proyecto nació como un encargo de SEO. La web era el paso previo necesario para poder implementarlo bien. Aquí está el plan completo: dos fases de arranque y una cuota mensual de contenido y mantenimiento.</p>
+
+  <!-- ESCENARIOS -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px;">
+    <div style="background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:20px 22px;">
+      <div style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;">Solo SEO (sin web)</div>
+      <div style="font-size:13px;color:var(--text);line-height:1.6;">
+        Fase 0: <strong>350 €</strong><br>
+        Fase 1: <strong>500 €</strong><br>
+        Crecimiento orgánico mensual: <strong>450 €/mes</strong>
+      </div>
+    </div>
+    <div style="background:#f0fdf4;border:1px solid rgba(22,163,74,.3);border-radius:12px;padding:20px 22px;">
+      <div style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#166534;margin-bottom:8px;">Web + SEO (recomendado)</div>
+      <div style="font-size:13px;color:var(--text);line-height:1.6;">
+        Fase 0: <strong style="color:#166534;">incluida</strong> <span style="color:var(--muted);text-decoration:line-through;font-size:12px;">350 €</span><br>
+        Fase 1: <strong style="color:#166534;">incluida</strong> <span style="color:var(--muted);text-decoration:line-through;font-size:12px;">500 €</span><br>
+        Crecimiento orgánico mensual: <strong>450 €/mes</strong>
+      </div>
+      <div style="margin-top:10px;font-size:11px;font-weight:700;color:#166534;">Ahorro de 850 € en el arranque</div>
+    </div>
+  </div>
+
+  <div class="seo-phases">
+
+    <!-- FASE 0 -->
+    <div class="seo-phase included">
+      <div class="seo-phase-head">
+        <div>
+          <div class="seo-phase-label">Fase 0 · Punto de partida · Pago único</div>
+          <div class="seo-phase-title">Auditoría, setup y validación técnica</div>
+          <div class="seo-phase-sub">Duración: 1-2 semanas</div>
+        </div>
+        <div class="seo-phase-price">
+          <div class="seo-price-box" style="border-color:rgba(22,163,74,.3); background:#f0fdf4; padding:14px 20px;">
+            <div class="seo-price-amount" style="color:#166534; font-size:30px;">Incluido</div>
+            <div style="font-size:13px; color:#166534; margin-top:5px;"><span class="price-crossed" style="color:var(--muted);">350 €</span> si construimos la web</div>
+          </div>
+          <span class="badge-included">Ahorro de 350 €</span>
+        </div>
+      </div>
+      <div class="seo-phase-body">
+        <ul>
+          <li><strong>Auditoría SEO + GEO completa</strong>: <span>técnica, contenido, schema, visibilidad en IA y SEO local. Documentada en informe entregable.</span></li>
+          <li><strong>Setup técnico</strong>: <span>sitemap XML, robots.txt, canonicals, redireccionamientos 301 desde las URLs antiguas de WordPress, Google Search Console y Bing Webmaster Tools.</span></li>
+          <li><strong>Datos estructurados JSON-LD</strong>: <span>Organization, LocalBusiness, Service y FAQPage en las páginas clave.</span></li>
+          <li><strong>GA4 + Consent Mode v2</strong>: <span>eventos de conversión configurados — formularios, clics en teléfono, WhatsApp y descarga de guía.</span></li>
+          <li><strong>Validación de indexación</strong>: <span>cobertura en Search Console, envío del sitemap, primeras URLs enviadas a Google Indexing API e IndexNow (Bing/Yandex).</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- FASE 1 -->
+    <div class="seo-phase included">
+      <div class="seo-phase-head">
+        <div>
+          <div class="seo-phase-label">Fase 1 · Quick wins · Pago único</div>
+          <div class="seo-phase-title">Mejoras SEO + GEO de alto impacto</div>
+          <div class="seo-phase-sub">Duración: 4 semanas</div>
+        </div>
+        <div class="seo-phase-price">
+          <div class="seo-price-box" style="border-color:rgba(22,163,74,.3); background:#f0fdf4; padding:14px 20px;">
+            <div class="seo-price-amount" style="color:#166534; font-size:30px;">Incluido</div>
+            <div style="font-size:13px; color:#166534; margin-top:5px;"><span class="price-crossed" style="color:var(--muted);">500 €</span> si construimos la web</div>
+          </div>
+          <span class="badge-included">Ahorro de 500 €</span>
+        </div>
+      </div>
+      <div class="seo-phase-body">
+        <ul>
+          <li><strong>Implementación de todas las mejoras técnicas</strong>: <span>velocidad, estructura de URLs, mobile, corrección de errores detectados en la auditoría.</span></li>
+          <li><strong>Optimización on-page</strong>: <span>titles únicos, meta descriptions, H1/H2 y contenido de las landings principales según el keyword research.</span></li>
+          <li><strong>llms.txt + señales GEO</strong>: <span>preparación para citabilidad en ChatGPT, Perplexity y Google AI Overviews desde el primer día.</span></li>
+          <li><strong>Google Business Profile</strong>: <span>descripción, categorías, fotos, servicio principal y respuesta a preguntas frecuentes optimizadas.</span></li>
+          <li><strong>Publicación de los primeros 4 posts del blog</strong>: <span>con keyword research previo y análisis del top 10 de Google antes de redactar cada uno.</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- MANTENIMIENTO -->
+    <div class="seo-phase">
+      <div class="seo-phase-head">
+        <div>
+          <div class="seo-phase-label">Crecimiento orgánico mensual · A partir del mes 3</div>
+          <div class="seo-phase-title">Contenido, monitorización y mejora continua</div>
+          <div class="seo-phase-sub">Cuota mensual · Sin permanencia · Preaviso 30 días</div>
+        </div>
+        <div class="seo-phase-price">
+          <div class="seo-price-box">
+            <div class="seo-price-amount">450 € <small>/mes</small></div>
+            <div class="seo-price-label">sin permanencia</div>
+          </div>
+        </div>
+      </div>
+      <div class="seo-phase-body">
+        <ul>
+          <li><strong>4 piezas de contenido editorial</strong>: <span>posts, landings de zona o guías con foco SEO y GEO, estructuradas para ser citadas en ChatGPT, Perplexity y Google AI Overviews. Keyword research + análisis del top 10 antes de cada redacción.</span></li>
+          <li><strong>Monitorización completa</strong>: <span>Google Search Console, Bing Webmaster Tools, GA4. Detección de caídas, oportunidades y queries emergentes.</span></li>
+          <li><strong>Indexación de URLs</strong> <span>nuevas o modificadas vía Google Indexing API e IndexNow (Bing/Yandex).</span></li>
+          <li><strong>Ajustes técnicos y de schema</strong> <span>según evolución del algoritmo y oportunidades detectadas cada mes.</span></li>
+          <li><strong>Reporte mensual ejecutivo</strong>: <span>KPIs reales, comparativa mes a mes y próximos pasos.</span></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="callout" style="background:var(--teal-bg); border-color:rgba(8,135,110,.2);">
+    <div class="callout-icon">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#08876e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="20 6 9 17 4 12"/>
+      </svg>
+    </div>
+    <div class="callout-text">
+      <h4>Si construimos la web juntos, las dos primeras fases van incluidas</h4>
+      <p>Contratar web y SEO por separado costaría 350 € + 500 € + la inversión en desarrollo. Si nos encargas el proyecto web, la auditoría, el setup técnico y todas las mejoras SEO/GEO quedan integradas en él: la web sale ya optimizada desde el primer día, sin necesidad de proyectos adicionales a posteriori. El ahorro real en el arranque es de <strong>850 €</strong>.</p>
+    </div>
+  </div>
+</section>
+
+</div><!-- /container -->
+
+<!-- FOOTER -->
+<div class="doc-footer">
+  <div>
+    <strong>Diego Fresno</strong>
+    diegofresno.com · Consultoría SEO y Desarrollo Web
+  </div>
+  <div class="doc-footer-logo">diego<span>fresno</span>.com</div>
+</div>
+
+</body>
+</html>
