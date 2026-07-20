@@ -171,6 +171,9 @@ table td:first-child { color: var(--text); font-weight: 500; }
 .cta-fix p { margin: 0; font-size: 14px; color: var(--text); }
 
 .task { margin: 28px 0; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; background: var(--bg-card); box-shadow: var(--shadow-sm); }
+.task.done { border-color: #16a34a; }
+.task.done .task-head { background: #f0fdf4; border-bottom-color: #bbf7d0; }
+.badge-done { display: inline-flex; align-items: center; gap: 4px; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; background: #16a34a; color: white; padding: 3px 9px; border-radius: 4px; margin-left: auto; }
 .task-head { padding: 16px 20px; background: var(--bg-2); border-bottom: 1px solid var(--border); display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
 .task-head .num { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: var(--cyan); background: white; padding: 2px 7px; border-radius: 4px; border: 1px solid rgba(0,128,168,.2); }
 .task-head h3 { font-family: 'Poppins', sans-serif; font-size: 17px; font-weight: 600; color: var(--text); margin: 0; flex: 1; }
@@ -724,11 +727,12 @@ footer.doc { margin-top: 32px; padding-top: 20px; border-top: 1px solid var(--bo
   <p>Archivos que subimos directamente a la raíz del dominio. Cambios sin riesgo — no tocan ninguna lógica existente.</p>
 
 
-  <div class="task" id="t-htaccess">
+  <div class="task done" id="t-htaccess">
     <div class="task-head">
       <span class="sev crit">Crítico</span>
       <span class="num">T4</span>
       <h3>.htaccess — redirect HTTP → HTTPS (301 permanente)</h3>
+      <span class="badge-done">✓ Hecho · 2026-07-20</span>
     </div>
     <div class="task-body">
       <div class="cta-issue">
@@ -754,11 +758,12 @@ RewriteCond %{REQUEST_URI} !^/administra [NC]
   </div>
 
 
-  <div class="task" id="t-robots">
+  <div class="task done" id="t-robots">
     <div class="task-head">
       <span class="sev crit">Crítico</span>
       <span class="num">T5</span>
       <h3>robots.txt — corrección + allow a bots de IA</h3>
+      <span class="badge-done">✓ Hecho · 2026-07-20</span>
     </div>
     <div class="task-body">
       <div class="cta-issue">
@@ -822,11 +827,12 @@ Sitemap: https://www.agencialaplaya.com/sitemap.xml</code></pre>
   </div>
 
 
-  <div class="task" id="t-sitemap">
+  <div class="task done" id="t-sitemap">
     <div class="task-head">
       <span class="sev p0">Alta</span>
       <span class="num">T5</span>
       <h3>sitemap.xml — páginas estáticas</h3>
+      <span class="badge-done">✓ Hecho · 2026-07-20</span>
     </div>
     <div class="task-body">
       <div class="cta-issue">
@@ -855,11 +861,12 @@ Sitemap: https://www.agencialaplaya.com/sitemap.xml</code></pre>
   </div>
 
 
-  <div class="task" id="t-llms">
+  <div class="task done" id="t-llms">
     <div class="task-head">
       <span class="sev p0">Alta</span>
       <span class="num">T9</span>
       <h3>llms.txt — visibilidad en ChatGPT, Perplexity y Copilot</h3>
+      <span class="badge-done">✓ Hecho · 2026-07-20</span>
     </div>
     <div class="task-body">
       <div class="cta-issue">
@@ -914,17 +921,18 @@ Sitemap: https://www.agencialaplaya.com/sitemap.xml</code></pre>
   </div>
 
 
-  <div class="task" id="t-indexnow">
+  <div class="task done" id="t-indexnow">
     <div class="task-head">
       <span class="sev p1">Media</span>
       <span class="num">—</span>
       <h3>IndexNow — clave de verificación</h3>
+      <span class="badge-done">✓ Hecho · 2026-07-20</span>
     </div>
     <div class="task-body">
       <p>IndexNow permite notificar a Bing, Yandex y Seznam en minutos cuando se publica o actualiza un inmueble, sin esperar al crawl natural. El paso previo es subir el archivo de verificación a la raíz.</p>
       <div class="cta-do">
         <div class="cta-label">Acción</div>
-        <p>Generamos la clave UUID y subimos el archivo <code>{KEY}.txt</code> a la raíz del dominio. Una vez verificado, podremos lanzar pings manuales cuando lo necesitemos. La integración automática con IAGestión (cada vez que se publica un inmueble) la coordina IAGestión.</p>
+        <p>Clave UUID generada: <code>9a9f056b5be643918ed71fd3f0faaa75</code>. Archivo <code>9a9f056b5be643918ed71fd3f0faaa75.txt</code> subido a la raíz. Verificado: <a href="https://www.agencialaplaya.com/9a9f056b5be643918ed71fd3f0faaa75.txt" target="_blank">agencialaplaya.com/9a9f056b5be643918ed71fd3f0faaa75.txt</a> → 200 OK. La integración automática con IAGestión (cada vez que se publica un inmueble) la coordina IAGestión.</p>
       </div>
     </div>
   </div>
